@@ -9,28 +9,34 @@
   
   .logo-container {
     display: flex;
-    align-items: center; /* Align items vertically centered */
+    align-items: center; 
   }
   
   .logo {
-    width: 60px; /* Adjust as per your logo dimensions */
+    width: 80px; 
     height: auto;
-    margin-right: 10px; /* Space between logo and text */
-  }
-  
+    margin-right: 5px; 
+    
+}
+
   .logo-text {
     display: flex;
     flex-direction: column;
     color:#039855 ;
     size: 50px;
     font-family: "Inter", sans-serif;
+    font-style:normal;
+    font-size:xx-large;
+
   }
   
   .slogan {
-    font-size: 12px;
+    font-size: 15px;
     color:#039855;
-    margin-top: 3px; /* Adjust spacing between MealMission and slogan */
-  }
+    margin-top: 1px; /* Adjust spacing between MealMission and slogan */
+    
+}
+
   
   
   .header nav ul {
@@ -41,6 +47,8 @@
   
   .header nav ul li a {
     text-decoration: none;
-    color: #333;
+    color:#039855;
+    font-family: "Inter", sans-serif;
+    font-size: medium;
   }
   

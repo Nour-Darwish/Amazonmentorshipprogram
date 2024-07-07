@@ -1,10 +1,12 @@
+// App.js
 import React from 'react';
-import SignUp from './SignUp';
 
+import Login from './Login';
+import SignUpDonor from './SignUpDonor';
 function App() {
   return (
     <div className="App">
-      <SignUp />
+      <SignUpDonor/>
     </div>
   );
 }
