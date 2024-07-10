@@ -9,8 +9,8 @@
 
 .sign-up {
   width: 750px; /* Further increased width for a more rectangular shape */
-  padding: 50px; 
-  background: rgba(255, 255, 255, 0.9); 
+  padding: 100px; 
+  background: rgba(255, 255, 255, 0.8); 
   border-radius: 10px; 
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
   margin: 70px auto; 
@@ -18,9 +18,12 @@
 
 .sign-up h2 {
   text-align: center;
-  margin-bottom: 40px; 
+  
   font-family: "Inter", sans-serif;
   font-weight: 700;
+  margin-top: 5px;
+  font-size: 50px;
+  
   }
   .Create{
     color: black;
@@ -36,8 +39,8 @@
 }
 
 .sign-up input {
-  padding: 15px; 
-  margin-bottom: 15px; 
+  padding: 20px; 
+  margin-bottom: 20px; 
   border: 1px solid grey;
   border-radius: 10px;
   font-family: "Inter", sans-serif;

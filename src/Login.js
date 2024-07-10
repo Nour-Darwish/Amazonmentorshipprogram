@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import './Login.css';
@@ -40,7 +41,7 @@ const Login = () => {
           </div>
           <button type="submit">LOGIN</button>
         </form>
-        <p>Don't have an account? <a href="/sign-up">Sign Up</a></p>
+        <p>Don't have an account? <Link to="/sign-up">Sign Up</Link></p>
       </div>
       <Footer />
     </div>

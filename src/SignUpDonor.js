@@ -8,12 +8,13 @@ const SignUpDonor = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [missionstate, setMissionState] = useState('');
+  const [description, setDescription] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add logic to handle form submission, such as sending data to an API
-    console.log({ name, email, password, confirmPassword, missionstate });
+    console.log({ name, email, password, confirmPassword, description });
   };
 
   return (
@@ -21,7 +22,7 @@ const SignUpDonor = () => {
       <Header />
       <div className="sign-up">
         <h2>
-        <span className="Create">Create</span> <span className="Account">Account</span>
+          <span className="Create">Create</span> <span className="Account">Account</span>
         </h2>
         <form onSubmit={handleSubmit}>
           <input 
@@ -39,10 +40,17 @@ const SignUpDonor = () => {
             required 
           />
           <input 
+            type="tel" 
+            placeholder="Phone Number" 
+            value={phoneNumber} 
+            onChange={(e) => setPhoneNumber(e.target.value)} 
+            required 
+          />
+          <input 
             type="text" 
-            placeholder="Mission Statement" 
-            value={missionstate} 
-            onChange={(e) => setMissionState(e.target.value)} 
+            placeholder="Description(optional)" 
+            value={description} 
+            onChange={(e) => setDescription(e.target.value)} 
           />
           <input 
             type="password" 
