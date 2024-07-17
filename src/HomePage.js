@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from './Header';
 import Footer from './Footer';
 import './HomePage.css';
 
@@ -17,7 +16,7 @@ const HomePage = () => {
               <Link to="/login" style={{ color: 'inherit', textDecoration: 'none' }}>Log In</Link>
             </button>
             <button className="hero-button">
-              <Link to="/SignUpDonor" style={{ color: 'inherit', textDecoration: 'none' }}>Sign Up</Link>
+              <Link to="/SignUp" style={{ color: 'inherit', textDecoration: 'none' }}>Sign Up</Link>
             </button>
           </div>
         </div>
@@ -63,7 +62,7 @@ const HomePage = () => {
           <div className="fact">
             <img src="https://media.istockphoto.com/id/1057556012/photo/the-poor-old-mans-hands-hold-an-empty-bowl-the-concept-of-hunger-or-poverty-selective-focus.jpg?s=612x612&w=0&k=20&c=m7i1f7iVFQoS8Nf_EfzqsiT9fZFSTqbqUlcCwrXQ_eU="alt="Fact 3" />
             <div className="fact-text-box">
-              <p> Food price inflation combined with inflation , and with loss of income resulting from rising unemployment and salary cuts, has drastically reduced Lebanese households’ ability to afford adequate and sufficient food, especially for the poorest and most vulnerable. </p>
+              <p> Food price inflation and loss of income resulting from rising unemployment has drastically reduced Lebanese households’ ability to afford adequate and sufficient food, especially for the poorest and most vulnerable. </p>
             </div>
           </div>
         </div>

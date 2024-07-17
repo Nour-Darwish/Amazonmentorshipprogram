@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import './SignUpDonor.css';
+import './SignUp.css';
 
 const SignUpDonor = () => {
   const [name, setName] = useState('');

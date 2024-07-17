@@ -16,7 +16,7 @@ const Login = () => {
 
   return (
     <div className="login-page">
-      <Header />
+      
       <div className="login">
         <h2>
           <span className="welcome">Welcome</span> <span className="back">Back!</span>
@@ -41,7 +41,7 @@ const Login = () => {
           </div>
           <button type="submit">LOGIN</button>
         </form>
-        <p>Don't have an account? <Link to="/sign-up">Sign Up</Link></p>
+        <p>Don't have an account? <Link to="/SignUp">Sign Up</Link></p>
       </div>
       <Footer />
     </div>

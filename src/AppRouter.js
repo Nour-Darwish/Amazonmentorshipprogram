@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Login';
-import SignUpDonor from './SignUpDonor';
+import SignUp from './SignUp';
 import AccountPage from './AccountPage';
 import HomePage from './HomePage';
 import DonationForm from './DonationForm'
@@ -12,9 +12,11 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/SignUpDonor" element={<SignUpDonor />} />
+        <Route path="/SignUp" element={<SignUp />} />
         <Route path="/AccountPage" element={<AccountPage/>}/>
         <Route path="/HomePage" element={<HomePage/>}/>
+        <Route path="/DonationForm" element={<DonationForm/>}/>
+
         
       </Routes>
     </BrowserRouter>

@@ -17,7 +17,7 @@ const Header = () => {
         <ul className="nav">
           <li><a href="/"><Link to="/">Home</Link></a></li>
           <li><a href="/"><Link to="/AccountPage">Account Page</Link></a></li>
-          <li><a href="/">Donate</a></li>
+          <li><a href="/"><Link to="/DonationForm">Donate</Link></a></li>
           <li><a href="/">Receive</a></li>
           <li><a href="/">View Status</a></li>
           <li><a href="/">FAQs</a></li>

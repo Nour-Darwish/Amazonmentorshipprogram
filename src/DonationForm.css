@@ -1,55 +1,137 @@
-body {
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    background-image: url('background.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+/* DonationForm.css */
+.main-container {
+     font-family: "Inter", sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-    align-items: center;
+    
+   
+    min-height: 100vh;
+
+    /*  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;*/
+    
 }
+
 .container {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 60px; /* Adjusted padding for better layout */
     border-radius: 10px;
-    width: 400px;
-    max-width: 100%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Adjust width for better responsiveness */
+    height: 830px;
+    max-width: 1200px; /* Set a maximum width */
+    background: rgba(255, 255, 255, 0.8); 
     text-align: left;
-}
-label {
-    display: block;
-    margin-bottom: 10px;
-    color:black;
-}
-select, input, textarea {
-    padding: 8px;
-    font-size: 16px;
-    margin-bottom: 15px;
-    width: 100%;
+    margin: 40px auto; /* Adjusted margin */
     box-sizing: border-box;
 }
 
-input[type="file"] {
-    margin-bottom: 20px;
+label {
+    display: block;
+    margin-bottom:10px;
+    color: black;
+    font-family: "Inter", sans-serif;
+    font-size: 20px; /* Adjusted font size */
 }
 
-.donate-button {
-    background-color: #039855;
-    color: white;
-    border: none;
-    padding: 12px 20px;
+select, input, textarea {
+    padding: 20px; /* Adjusted padding */
+    
     font-size: 16px;
+    margin-bottom: 20px;
+    width: 100%; /* Ensure full width */
+    border: 1px solid grey; /* Subtle border color */
+    border-radius: 10px; /* Softer border radius */
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+   
+}
+
+
+input[type="file"] {
+    margin-bottom: 20px;
+    border:none
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 80%;
+}
+
+.checkbox-container input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid grey;
+    border-radius: 4px;
+    margin-right: 10px;
     cursor: pointer;
-    border-radius: 45px;
-    transition: background-color 0.3s ease;
-    display: block;
-    margin: 0 auto;
+    position: relative;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+    background-color: #039855;
+    border-color: #039855;
+}
+
+.checkbox-container input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    padding: auto;
+    width: 10px;
+    height: 25px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkboxLabel {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.donate-button {
+    padding: 15px; 
+  background-color: #039855;
+  color: white;
+  border: none;
+  width: 200px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 40px auto 0; 
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: medium;
+  font-weight: 600; /* Button adjusts to the text width */
 }
 
 .donate-button:hover {
-    background-color: #4CAF50;
+    background-color: #028a4b; /* Slightly darker shade on hover */
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Increase width for smaller screens */
+        padding: 20px; /* Adjust padding */
+    }
+
+    select, input, textarea {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .donate-button {
+        width: 100%; /* Full width button on smaller screens */
+    }
 }
