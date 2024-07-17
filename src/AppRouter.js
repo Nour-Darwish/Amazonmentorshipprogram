@@ -4,7 +4,9 @@ import Login from './Login';
 import SignUp from './SignUp';
 import AccountPage from './AccountPage';
 import HomePage from './HomePage';
-import DonationForm from './DonationForm'
+import DonationForm from './DonationForm';
+import SendPasswordResetLink from './SendPasswordResetLink';
+import PasswordReset from './PasswordReset'
 const AppRouter = () => {
   
   return (
@@ -16,8 +18,8 @@ const AppRouter = () => {
         <Route path="/AccountPage" element={<AccountPage/>}/>
         <Route path="/HomePage" element={<HomePage/>}/>
         <Route path="/DonationForm" element={<DonationForm/>}/>
-        <Route path="/SendPasswordResetLink" element={<SendPasswordRestLink/>}/>
-        <Route path="/PasswordResst" element={<PasswordReset/>}/>
+        <Route path="/SendPasswordResetLink" element={<SendPasswordResetLink/>}/>
+        <Route path="/PasswordReset" element={<PasswordReset/>}/>
         
       </Routes>
     </BrowserRouter>
