@@ -16,7 +16,8 @@ const AppRouter = () => {
         <Route path="/AccountPage" element={<AccountPage/>}/>
         <Route path="/HomePage" element={<HomePage/>}/>
         <Route path="/DonationForm" element={<DonationForm/>}/>
-
+        <Route path="/SendPasswordResetLink" element={<SendPasswordRestLink/>}/>
+        <Route path="/PasswordResst" element={<PasswordReset/>}/>
         
       </Routes>
     </BrowserRouter>
