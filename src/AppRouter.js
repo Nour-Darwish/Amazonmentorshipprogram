@@ -3,15 +3,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Login';
 import SignUpDonor from './SignUpDonor';
 import AccountPage from './AccountPage';
+import HomePage from './HomePage';
 const AppRouter = () => {
   
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/sign-up" element={<SignUpDonor />} />
+        <Route path="/SignUpDonor" element={<SignUpDonor />} />
         <Route path="/AccountPage" element={<AccountPage/>}/>
+        <Route path="/HomePage" element={<HomePage/>}/>
       </Routes>
     </BrowserRouter>
   );
