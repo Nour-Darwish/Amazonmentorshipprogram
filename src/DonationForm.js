@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import styles from './DonationForm.css';
+import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import './DonationForm.css';
 
 const DonationForm = () => {
     const [foodType, setFoodType] = useState('cooked');
     const [quantityLabel, setQuantityLabel] = useState('Quantity:');
+    const navigate = useNavigate();
 
     useEffect(() => {
         updateQuantityLabel();
@@ -23,12 +25,24 @@ const DonationForm = () => {
         }
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const foodPhoto = e.target['food-photo'].files[0];
+        const donation = {
+            foodType,
+            expirationDate: e.target['expiration-date'].value,
+            quantity: e.target['quantity'].value,
+            description: e.target['description'].value,
+            image: foodPhoto ? URL.createObjectURL(foodPhoto) : ''
+        };
+        navigate('/EditDonation', { state: { donation } });
+    };
+
     return (
-        
         <div className="main-container">
-         <Header />
+            <Header />
             <div className="container">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <label htmlFor="food-type">Select type of food</label>
                     <select id="food-type" name="food-type" value={foodType} onChange={handleFoodTypeChange}>
                         <option value="cooked">Cooked</option>

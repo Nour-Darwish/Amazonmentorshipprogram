@@ -1,0 +1,61 @@
+/* ThankYou.css */
+
+/* General styling for the main container */
+.main-container {
+    font-family: "Inter", sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px; /* Adjust this value based on your header height */
+  }
+  
+  /* Styling for the success container */
+  .success-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 90px;
+    width: 100%;
+    max-width: 920px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Styling for the success message */
+  .success-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+  }
+  
+  /* Styling for the success image */
+  .success-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  /* Styling for the home button */
+  .home-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #039855;
+    color: white;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .home-button:hover {
+    background-color: #028a4b;
+  }
+  

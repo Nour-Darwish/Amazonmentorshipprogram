@@ -1,49 +1,36 @@
 /* DonationForm.css */
 .main-container {
-     font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif;
     background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
-    
     display: flex;
     flex-direction: column;
-    
-   
     min-height: 100vh;
-
-    /*  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-image: url("background.jpg");
-  background-size: cover;
-  background-position: center;*/
-    
 }
 
 .container {
     background-color: #ffffff;
-    padding: 60px; /* Adjusted padding for better layout */
+    padding: 30px; /* Adjusted padding for better layout */
     border-radius: 10px;
-    width: 100%; /* Adjust width for better responsiveness */
-    height: 830px;
-    max-width: 1200px; /* Set a maximum width */
+    width: 80%; /* Make the width more flexible */
+    max-width: 1000px; /* Reduced the maximum width */
     background: rgba(255, 255, 255, 0.8); 
     text-align: left;
-    margin: 40px auto; /* Adjusted margin */
+    margin: 150px auto 150px auto; /* Added more top margin for space from the header */
     box-sizing: border-box;
 }
 
 label {
     display: block;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     color: black;
     font-family: "Inter", sans-serif;
     font-size: 20px; /* Adjusted font size */
 }
 
 select, input, textarea {
-    padding: 20px; /* Adjusted padding */
-    
+    padding: 15px; /* Adjusted padding */
     font-size: 16px;
     margin-bottom: 20px;
     width: 100%; /* Ensure full width */
@@ -51,19 +38,18 @@ select, input, textarea {
     border-radius: 10px; /* Softer border radius */
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
-   
 }
-
 
 input[type="file"] {
     margin-bottom: 20px;
-    border:none
+    border: none;
 }
+
 .checkbox-container {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    width: 80%;
+    width: 100%; /* Adjusted width */
 }
 
 .checkbox-container input[type="checkbox"] {
@@ -86,7 +72,7 @@ input[type="file"] {
     content: '';
     position: absolute;
     top: 2px;
-    padding: auto;
+    left: 5px;
     width: 10px;
     height: 25px;
     border: solid white;
@@ -101,19 +87,20 @@ input[type="file"] {
     vertical-align: middle;
     margin-left: 10px;
 }
+
 .donate-button {
-    padding: 15px; 
-  background-color: #039855;
-  color: white;
-  border: none;
-  width: 200px;
-  border-radius: 50px;
-  cursor: pointer;
-  margin: 40px auto 0; 
-  display: block;
-  font-family: "Inter", sans-serif;
-  font-size: medium;
-  font-weight: 600; /* Button adjusts to the text width */
+    padding: 15px;
+    background-color: #039855;
+    color: white;
+    border: none;
+    width: 200px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 40px auto 0;
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: medium;
+    font-weight: 600; /* Button adjusts to the text width */
 }
 
 .donate-button:hover {

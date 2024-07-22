@@ -7,6 +7,12 @@ import HomePage from './HomePage';
 import DonationForm from './DonationForm';
 import SendPasswordResetLink from './SendPasswordResetLink';
 import PasswordReset from './PasswordReset'
+import DonationFeed from './DonationFeed';
+import DonationConfirmation from './RequestConfirmation';
+import SuccessConfirmation from './SuccessConfirmation';
+import EditDonation from './EditDonation';
+import ThankYou from './ThankYou';
+
 const AppRouter = () => {
   
   return (
@@ -20,6 +26,11 @@ const AppRouter = () => {
         <Route path="/DonationForm" element={<DonationForm/>}/>
         <Route path="/SendPasswordResetLink" element={<SendPasswordResetLink/>}/>
         <Route path="/PasswordReset" element={<PasswordReset/>}/>
+        <Route path="/DonationFeed" element={<DonationFeed/>}/>
+        <Route path="/DonationConfirmation" element={<DonationConfirmation/>}/>
+        <Route path="/SuccessConfirmation" element={<SuccessConfirmation/>}/>
+        <Route path="/EditDonation" element={<EditDonation/>}/>
+        <Route path="/ThankYou" element ={<ThankYou/>}/>
         
       </Routes>
     </BrowserRouter>

@@ -1,0 +1,97 @@
+/* DonationFeed.css */
+.main-container {
+    font-family: "Inter", sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px; /* Adjust this value based on your header height */
+}
+
+.donation-feed-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 40px auto;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.donation-card {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.donation-card .status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336; /* Red background */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.donation-image {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+}
+
+.donation-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.donation-info h3 {
+    margin: 0;
+    color: #039855;
+    font-weight: 700;
+}
+
+.donation-info p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.request-button {
+    padding: 10px;
+    background-color: #039855;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+.request-button:hover {
+    background-color: #028a4b;
+}
+
+@media (max-width: 768px) {
+    .donation-card {
+        flex-direction: column;
+    }
+
+    .donation-image {
+        width: 100%;
+        height: auto;
+    }
+}

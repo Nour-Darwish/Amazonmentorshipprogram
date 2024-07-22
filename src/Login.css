@@ -1,3 +1,12 @@
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Login Page Styles */
 .login-page {
   display: flex;
   flex-direction: column;
@@ -5,29 +14,27 @@
   background-image: url("background.jpg");
   background-size: cover;
   background-position: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .login {
-  width: 300%; /* Make the width more flexible */
-  max-width: 900px; /* Add a maximum width */
-  height: 100%; /* Make the width more flexible */
-  max-height: 1200px;
-  padding: 150px; /* Adjust padding for better spacing */
-  background: rgba(255, 255, 255, 0.8); 
+  width: 80%; /* Make the width flexible */
+  max-width: 600px; /* Add a maximum width */
+  padding: 50px; /* Adjust padding for better spacing */
+  background: rgba(255, 255, 255, 0.9); 
   border-radius: 10px; 
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); 
-  
-  margin: 90px auto; /* Space from the header and footer */
+  margin: 20px auto; /* Center the login box */
   overflow: hidden;
+  text-align: center;
 }
 
 .login h2 {
-  text-align: center;
-  
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  margin-top: 5px;
-  font-size: 50px;
+  margin-bottom: 20px;
+  font-size: 2.5rem; /* Adjust font size */
 }
 
 .welcome {
@@ -41,17 +48,18 @@
 .login form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .login input {
-  padding: 20px; 
+  padding: 15px; /* Adjust padding */
   border: 1px solid grey;
   border-radius: 10px;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
-  width: 80%; /* Adjust width */
+  font-size: 1rem; /* Adjust font size */
+  width: 100%; /* Adjust width */
   max-width: 500px; /* Add max-width */
-  margin: 0 auto 20px auto;
+  margin-bottom: 20px; /* Space between inputs */
 }
 
 .password-container {
@@ -59,15 +67,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .forgot-password {
-  font-size: 14px;
+  font-size: 0.875rem; /* Adjust font size */
   font-weight: 400;
   font-family: "Inter", sans-serif;
   color: #039855;
   text-align: right;
-  width: 60%; 
+  width: 100%; 
+  max-width: 500px;
+  margin-bottom: 20px;
 }
 
 .forgot-password:hover {
@@ -75,17 +86,17 @@
 }
 
 .login button {
-  padding: 15px; 
+  padding: 15px 30px; /* Adjust padding */
   background-color: #039855;
   color: white;
   border: none;
-  width: 200px;
+  width: 60%;
+  max-width: 200px; /* Adjust width */
   border-radius: 50px;
   cursor: pointer;
-  margin: 40px auto 0; 
-  display: block;
+  margin-top: 20px; 
   font-family: "Inter", sans-serif;
-  font-size: medium;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -96,8 +107,9 @@
 .login p {
   text-align: center;
   font-family: "Inter", sans-serif;
-  font-size: medium;
+  font-size: 1rem;
   font-weight: 700;
+  margin-top: 20px;
 }
 
 .login p a {
@@ -107,4 +119,34 @@
 
 .login p a:hover {
   text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .login {
+      width: 90%;
+      padding: 30px;
+  }
+
+  .login h2 {
+      font-size: 2rem;
+  }
+
+  .login input, .forgot-password, .login button {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login h2 {
+      font-size: 1.5rem;
+  }
+
+  .login input {
+      padding: 10px;
+  }
+
+  .login button {
+      width: 80%;
+  }
 }

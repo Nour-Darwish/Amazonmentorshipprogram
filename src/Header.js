@@ -15,12 +15,12 @@ const Header = () => {
       </div>
       <nav>
         <ul className="nav">
-          <li><a href="/"><Link to="/">Home</Link></a></li>
-          <li><a href="/"><Link to="/AccountPage">Account Page</Link></a></li>
-          <li><a href="/"><Link to="/DonationForm">Donate</Link></a></li>
-          <li><a href="/">Receive</a></li>
-          <li><a href="/">View Status</a></li>
-          <li><a href="/">FAQs</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/AccountPage">Account Page</Link></li>
+          <li><Link to="/DonationForm">Donate</Link></li>
+          <li><Link to="/DonationFeed">Receive</Link></li>
+          <li><Link to="/ViewStatus">View Status</Link></li>
+          <li><Link to="/FAQs">FAQs</Link></li>
         </ul>
       </nav>
     </header>

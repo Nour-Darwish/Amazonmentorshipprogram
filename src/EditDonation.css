@@ -1,0 +1,127 @@
+/* General styling for the main container */
+.main-container {
+    font-family: "Inter", sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px; /* Adjust this value based on your header height */
+}
+
+/* Styling for the edit container */
+.edit-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 90%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for the edit content */
+.edit-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+/* Styling for the edit info section */
+.edit-info {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.edit-info p {
+    margin: 8px 0;
+    color: #333;
+}
+
+.edit-info h3 {
+    margin-bottom: 10px;
+    color: #039855;
+}
+
+/* Styling for the food image */
+.food-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+/* Styling for the edit buttons */
+.edit-buttons {
+    display: flex; /* Ensures buttons are aligned side by side */
+    gap: 10px;
+    justify-content: center; /* Ensure buttons are centered */
+    align-items: center; /* Vertically align the buttons */
+    width: 100%; /* Ensure buttons take the full width */
+}
+
+/* Base styling for buttons */
+.button {
+    display: flex;
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Ensure consistent font size */
+    font-weight: 700; /* Ensure consistent font weight */
+    transition: background-color 0.3s ease;
+    width: 100px; /* Set a consistent width for all buttons */
+    height: 50px; /* Set a consistent height for all buttons */
+    box-sizing: border-box;
+    margin: 0; /* Remove default margin */
+}
+
+/* Specific styling for each button type */
+.edit-button {
+    background-color: #039855;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #028a4b;
+}
+
+.submit-button {
+    background-color: #039855;
+    color: white;
+}
+
+.submit-button:hover {
+    background-color: #028a4b;
+}
+
+.cancel-button {
+    background-color: #ccc;
+    color: black;
+}
+
+.cancel-button:hover {
+    background-color: #bbb;
+}
+
+/* Styling for input fields in edit mode */
+.edit-info input[type="text"],
+.edit-info input[type="number"],
+.edit-info input[type="date"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
