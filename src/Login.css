@@ -1,31 +1,26 @@
-/* General Styles */
-body, html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
-
 /* Login Page Styles */
 .login-page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  
   background-image: url("background.jpg");
   background-size: cover;
   background-position: center;
-  justify-content: center;
-  align-items: center;
+  padding: 20px; 
 }
 
 .login {
-  width: 80%; /* Make the width flexible */
-  max-width: 600px; /* Add a maximum width */
-  padding: 50px; /* Adjust padding for better spacing */
-  background: rgba(255, 255, 255, 0.9); 
-  border-radius: 10px; 
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); 
-  margin: 20px auto; /* Center the login box */
+  width: 70%; 
+  max-width: 700px; 
+  padding: 20px; 
+  background: rgba(255, 255, 255, 0.95); 
+  border-radius: 12px; 
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); 
+  
+ 
   overflow: hidden;
   text-align: center;
 }
@@ -33,8 +28,9 @@ body, html {
 .login h2 {
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  margin-bottom: 20px;
-  font-size: 2.5rem; /* Adjust font size */
+  margin-bottom: 25px;
+  font-size: 2.5rem; 
+  color: #039855; 
 }
 
 .welcome {
@@ -52,14 +48,20 @@ body, html {
 }
 
 .login input {
-  padding: 15px; /* Adjust padding */
-  border: 1px solid grey;
-  border-radius: 10px;
+  padding: 15px; 
+  border: 1px solid #ddd; 
+  border-radius: 8px;
   font-family: "Inter", sans-serif;
-  font-size: 1rem; /* Adjust font size */
-  width: 100%; /* Adjust width */
-  max-width: 500px; /* Add max-width */
-  margin-bottom: 20px; /* Space between inputs */
+  font-size: 1rem; 
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px; 
+  transition: border-color 0.3s; 
+}
+
+.login input:focus {
+  border-color: #039855; 
+  outline: none; 
 }
 
 .password-container {
@@ -71,7 +73,7 @@ body, html {
 }
 
 .forgot-password {
-  font-size: 0.875rem; /* Adjust font size */
+  font-size: 0.875rem; 
   font-weight: 400;
   font-family: "Inter", sans-serif;
   color: #039855;
@@ -86,22 +88,24 @@ body, html {
 }
 
 .login button {
-  padding: 15px 30px; /* Adjust padding */
+  padding: 15px 30px;
   background-color: #039855;
   color: white;
   border: none;
   width: 60%;
-  max-width: 200px; /* Adjust width */
-  border-radius: 50px;
+  max-width: 200px; 
+  border-radius: 25px; 
   cursor: pointer;
   margin-top: 20px; 
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 600;
+  transition: background-color 0.3s, transform 0.3s; 
 }
 
 .login button:hover {
   background-color: #028a4e;
+  transform: translateY(-2px); /* Slight lift on hover */
 }
 
 .login p {
@@ -124,29 +128,29 @@ body, html {
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .login {
-      width: 90%;
-      padding: 30px;
+    width: 90%;
+    padding: 30px;
   }
 
   .login h2 {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   .login input, .forgot-password, .login button {
-      width: 100%;
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .login h2 {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   .login input {
-      padding: 10px;
+    padding: 10px;
   }
 
   .login button {
-      width: 80%;
+    width: 80%;
   }
 }

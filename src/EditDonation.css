@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 80px; /* Adjust this value based on your header height */
+    padding-top: 80px; 
 }
 
 /* Styling for the edit container */
@@ -62,29 +62,29 @@
 
 /* Styling for the edit buttons */
 .edit-buttons {
-    display: flex; /* Ensures buttons are aligned side by side */
+    display: flex; 
     gap: 10px;
-    justify-content: center; /* Ensure buttons are centered */
-    align-items: center; /* Vertically align the buttons */
-    width: 100%; /* Ensure buttons take the full width */
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
 }
 
 /* Base styling for buttons */
 .button {
     display: flex;
-    align-items: center; /* Vertically center the text */
-    justify-content: center; /* Horizontally center the text */
+    align-items: center; 
+    justify-content: center; 
     padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px; /* Ensure consistent font size */
-    font-weight: 700; /* Ensure consistent font weight */
+    font-size: 16px; 
+    font-weight: 700; 
     transition: background-color 0.3s ease;
-    width: 100px; /* Set a consistent width for all buttons */
-    height: 50px; /* Set a consistent height for all buttons */
+    width: 100px; 
+    height: 50px; 
     box-sizing: border-box;
-    margin: 0; /* Remove default margin */
+    margin: 0; 
 }
 
 /* Specific styling for each button type */

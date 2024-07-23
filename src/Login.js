@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import './Login.css';
@@ -7,16 +7,18 @@ import './Login.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add logic to handle form submission, such as sending data to an API
+    // Log the email and password to the console
     console.log({ email, password });
+    // Redirect to the account page
+    navigate('/AccountPage');
   };
 
   return (
     <div className="login-page">
-      
       <div className="login">
         <h2>
           <span className="welcome">Welcome</span> <span className="back">Back!</span>

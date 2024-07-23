@@ -16,7 +16,7 @@ const RequestConfirmation = () => {
   const handleConfirm = () => {
     // Placeholder for API call
     console.log('Request confirmed:', donation);
-    navigate('/SuccessConfirmation'); // Redirect to a thank you page or any other page
+    navigate('/SuccessConfirmation'); 
   };
 
   const handleBack = () => {

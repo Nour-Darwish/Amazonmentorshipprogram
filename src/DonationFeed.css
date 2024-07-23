@@ -1,44 +1,55 @@
 /* DonationFeed.css */
+
 .main-container {
     font-family: "Inter", sans-serif;
     background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    padding-top: 80px; /* Adjust this value based on your header height */
+    justify-content: center;
+    align-items: flex-start; 
+    padding: 40px;
+    min-height: 100vh; 
 }
 
 .donation-feed-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px; 
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px; 
+    margin: 20px; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 1200px;
-    margin: 40px auto;
-    width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .donation-card {
     display: flex;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    margin-bottom: 20px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #e0e0e0; 
+    border-radius: 15px; 
+    margin-bottom: 25px; 
     width: 100%;
     max-width: 800px;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
     position: relative;
+    transition: transform 0.3s, box-shadow 0.3s; 
 }
+
+.donation-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+}
+
 .donation-card .status {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #f44336; /* Red background */
+    background-color: #f44336; 
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
@@ -50,6 +61,7 @@
     width: 200px;
     height: auto;
     object-fit: cover;
+    
 }
 
 .donation-info {
@@ -57,11 +69,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 }
 
 .donation-info h3 {
     margin: 0;
-    color: #039855;
+    color: #039855; 
     font-weight: 700;
 }
 
@@ -72,26 +85,33 @@
 
 .request-button {
     padding: 10px;
-    background-color: #039855;
+    background-color: #039855; 
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
     align-self: flex-start;
+    transition: background-color 0.3s, transform 0.3s; /* Add transition for hover effect */
 }
 
 .request-button:hover {
-    background-color: #028a4b;
+    background-color: #039855; /* Lighter green on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 @media (max-width: 768px) {
     .donation-card {
         flex-direction: column;
+        margin-bottom: 20px; 
     }
 
     .donation-image {
         width: 100%;
         height: auto;
+    }
+
+    .donation-info {
+        padding: 15px; 
     }
 }

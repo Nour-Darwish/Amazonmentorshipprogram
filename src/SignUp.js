@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Header from './Header';
 import Footer from './Footer';
 import './SignUp.css';
 
@@ -13,13 +12,13 @@ const SignUpDonor = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add logic to handle form submission, such as sending data to an API
+    //we need an api here
     console.log({ name, email, password, confirmPassword, description });
   };
 
   return (
     <div className="sign-up-page">
-      <Header />
+     
       <div className="sign-up">
         <h2>
           <span className="Create">Create</span> <span className="Account">Account</span>

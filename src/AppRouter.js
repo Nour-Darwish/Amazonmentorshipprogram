@@ -12,7 +12,7 @@ import DonationConfirmation from './RequestConfirmation';
 import SuccessConfirmation from './SuccessConfirmation';
 import EditDonation from './EditDonation';
 import ThankYou from './ThankYou';
-
+import FAQs from './FAQs';
 const AppRouter = () => {
   
   return (
@@ -30,6 +30,7 @@ const AppRouter = () => {
         <Route path="/DonationConfirmation" element={<DonationConfirmation/>}/>
         <Route path="/SuccessConfirmation" element={<SuccessConfirmation/>}/>
         <Route path="/EditDonation" element={<EditDonation/>}/>
+        <Route path="/FAQs" element={<FAQs />} />
         <Route path="/ThankYou" element ={<ThankYou/>}/>
         
       </Routes>

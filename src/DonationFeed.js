@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import './DonationFeed.css'; // Make sure to create this CSS file
+import './DonationFeed.css'; 
 
 const DonationFeed = () => {
   const [donations, setDonations] = useState([]);
@@ -27,6 +27,14 @@ const DonationFeed = () => {
         expirationDate: '2024-08-06',
         isAvailable: false, // Example of a donation that is no longer available
       },
+      {
+        id: 3,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVTjSy6g8nqKDcm9QIeVxQH_Xbi14-2XQBvaogFjFUlMY72OG7qQk1C9ALf-qYiC3nq50&usqp=CAU",
+        donor: 'التوفير',
+        description: 'tomato - 2 kilos',
+        expirationDate: '2024-08-11',
+        isAvailable: true, 
+      }
       // Add more donations as needed
     ];
     setDonations(fetchedDonations);

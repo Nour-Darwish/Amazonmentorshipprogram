@@ -9,7 +9,7 @@ const SuccessConfirmation = () => {
   const navigate = useNavigate();
 
   const handleHome = () => {
-    navigate('/'); // Navigate to the homepage or any other desired page
+    navigate('/'); // Navigate to the homepage 
   };
 
   return (

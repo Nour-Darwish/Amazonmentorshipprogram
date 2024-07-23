@@ -3,21 +3,23 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ensure full height coverage */
+  min-height: 100vh; /* Ensure full height */
+  
   background-image: url("background.jpg");
   background-size: cover;
   background-position: center;
+  padding: 20px; /* Add padding for better spacing */
 }
 
 .sign-up {
   width: 70%; /* Make the width flexible */
   max-width: 700px; /* Add a maximum width */
-  padding: 5px; /* Reduce padding for better spacing */
-  background: rgba(255, 255, 255, 0.9); 
-  border-radius: 10px; 
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); 
+  padding: 40px; /* Increase padding for more space */
+  background: rgba(255, 255, 255, 0.95); 
+  border-radius: 12px; 
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); 
   
-  margin-top: 60px;
+  margin-top: 20px;
   overflow: hidden;
   text-align: center;
 }
@@ -27,13 +29,14 @@
   font-weight: 700;
   margin-bottom: 20px;
   font-size: 2.5rem; /* Adjust font size */
+  color: #039855; /* Consistent color theme */
 }
 
-.Create {
+.sign-up .Create {
   color: black;
 }
 
-.Account {
+.sign-up .Account {
   color: #039855;
 }
 
@@ -45,13 +48,19 @@
 
 .sign-up input {
   padding: 15px; /* Adjust padding */
-  border: 1px solid grey;
-  border-radius: 10px;
+  border: 1px solid #ddd; /* Lighter border color */
+  border-radius: 8px; /* Softer border radius */
   font-family: "Inter", sans-serif;
   font-size: 1rem; /* Adjust font size */
   width: 100%; /* Adjust width */
   max-width: 500px; /* Add max-width */
   margin-bottom: 20px; /* Space between inputs */
+  transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.sign-up input:focus {
+  border-color: #039855; /* Highlight on focus */
+  outline: none; /* Remove default outline */
 }
 
 .sign-up button {
@@ -61,16 +70,18 @@
   border: none;
   width: 60%;
   max-width: 200px; /* Adjust width */
-  border-radius: 50px;
+  border-radius: 25px; /* Softer border radius */
   cursor: pointer;
   margin-top: 20px; 
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 600;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
 }
 
 .sign-up button:hover {
   background-color: #028a4e;
+  transform: translateY(-2px); /* Slight lift on hover */
 }
 
 .sign-up p {

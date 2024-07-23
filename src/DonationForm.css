@@ -4,38 +4,41 @@
     background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
+  
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
 }
 
 .container {
     background-color: #ffffff;
-    padding: 30px; /* Adjusted padding for better layout */
-    border-radius: 10px;
-    width: 80%; /* Make the width more flexible */
-    max-width: 1000px; /* Reduced the maximum width */
-    background: rgba(255, 255, 255, 0.8); 
+    padding: 30px; 
+    border-radius: 12px;
+    width: 60%; 
+    max-width: 800px; 
+    background: rgba(255, 255, 255, 0.95); 
     text-align: left;
-    margin: 150px auto 150px auto; /* Added more top margin for space from the header */
+   
     box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-
 label {
     display: block;
     margin-bottom: 10px;
     color: black;
     font-family: "Inter", sans-serif;
-    font-size: 20px; /* Adjusted font size */
+    font-size: 20px;
 }
 
 select, input, textarea {
-    padding: 15px; /* Adjusted padding */
+    padding: 15px; 
     font-size: 16px;
     margin-bottom: 20px;
-    width: 100%; /* Ensure full width */
-    border: 1px solid grey; /* Subtle border color */
-    border-radius: 10px; /* Softer border radius */
+    width: 100%; 
+    border: 1px solid grey; 
+    border-radius: 10px; 
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
 }
@@ -49,7 +52,7 @@ input[type="file"] {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    width: 100%; /* Adjusted width */
+    width: 100%; 
 }
 
 .checkbox-container input[type="checkbox"] {
@@ -111,7 +114,7 @@ input[type="file"] {
 @media (max-width: 768px) {
     .container {
         width: 90%; /* Increase width for smaller screens */
-        padding: 20px; /* Adjust padding */
+        padding: 20px; 
     }
 
     select, input, textarea {
