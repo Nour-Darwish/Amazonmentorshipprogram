@@ -13,6 +13,8 @@ import SuccessConfirmation from './SuccessConfirmation';
 import EditDonation from './EditDonation';
 import ThankYou from './ThankYou';
 import FAQs from './FAQs';
+import ViewStatus from './ViewStatus';
+
 const AppRouter = () => {
   
   return (
@@ -32,6 +34,7 @@ const AppRouter = () => {
         <Route path="/EditDonation" element={<EditDonation/>}/>
         <Route path="/FAQs" element={<FAQs />} />
         <Route path="/ThankYou" element ={<ThankYou/>}/>
+        <Route path="/ViewStatus" element={<ViewStatus/>}/>
         
       </Routes>
     </BrowserRouter>

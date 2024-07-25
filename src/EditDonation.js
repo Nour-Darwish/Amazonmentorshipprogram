@@ -46,7 +46,7 @@ const EditDonation = () => {
         <div className="edit-content">
           <div className="edit-info">
             <img src={editedDonation.image} alt={editedDonation.description} className="food-image" />
-            <p><strong>Donor:</strong> {isEditing ? <input type="text" name="donor" value={editedDonation.donor} onChange={handleChange} /> : editedDonation.donor}</p>
+            
             <p><strong>Description:</strong> {isEditing ? <input type="text" name="description" value={editedDonation.description} onChange={handleChange} /> : editedDonation.description}</p>
             <p><strong>Exp Date:</strong> {isEditing ? <input type="date" name="expirationDate" value={editedDonation.expirationDate} onChange={handleChange} /> : editedDonation.expirationDate}</p>
             <p><strong>Quantity:</strong> {isEditing ? <input type="number" name="quantity" value={editedDonation.quantity} onChange={handleChange} /> : editedDonation.quantity}</p>

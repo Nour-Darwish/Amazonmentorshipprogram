@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import './SuccessConfirmation.css';
-import success from './success.jpeg' 
+import success from "./success.jpeg"
 
 const SuccessConfirmation = () => {
   const navigate = useNavigate();

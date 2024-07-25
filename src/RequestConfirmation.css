@@ -1,14 +1,11 @@
-/* General styling for the main container */
 .main-container {
   font-family: "Inter", sans-serif;
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Styling for the confirmation container */
@@ -19,8 +16,6 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 800px;
-
-  
 }
 
 /* Styling for the confirmation content */
@@ -49,6 +44,17 @@
 .donor-info h3 {
   margin-bottom: 10px;
   color: #039855;
+}
+
+/* Styling for the WhatsApp link */
+.donor-info a {
+  color: #039855;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.donor-info a:hover {
+  text-decoration: underline;
 }
 
 /* Styling for the confirmation buttons */

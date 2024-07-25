@@ -70,6 +70,7 @@ body {
 
 /* How It Works Section */
 .how-it-works {
+  background-color: white; /* Ensure the background is white */
   padding: 50px 20px;
   text-align: center;
 }

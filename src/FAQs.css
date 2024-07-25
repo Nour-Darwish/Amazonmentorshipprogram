@@ -4,12 +4,10 @@
     background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
-  
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-     
 }
 
 /* Styling for the FAQ container */
@@ -19,14 +17,25 @@
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 800px;
+    max-width: 1200px; /* Increased max-width */
     transition: transform 0.3s, box-shadow 0.3s;
-    
+    text-align: left; /* Align content to the left */
+    display: flex; /* Added flex display */
+    flex-direction: row; /* Side-by-side layout */
+    align-items: flex-start;
+    justify-content: space-between; /* Add space between the FAQ section and the image */
 }
 
-.faq-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+/* Styling for the illustration */
+.faq-illustration {
+    width: 100%; /* Adjust width as needed */
+    max-width: 400px;
+    margin-left: 20px; /* Add left margin to separate from the FAQ content */
+}
+
+/* Styling for the FAQ content */
+.faq-content {
+    flex: 1; /* Allow the FAQ content to take up remaining space */
 }
 
 /* Styling for each FAQ item */
