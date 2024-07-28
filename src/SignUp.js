@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Footer from './Footer';
 import './SignUp.css';
 
-const SignUpDonor = () => {
+const SignUp = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -10,15 +10,41 @@ const SignUpDonor = () => {
   const [description, setDescription] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    //we need an api here
-    console.log({ name, email, password, confirmPassword, description });
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    const payload = { name, email, password, description, phoneNumber };
+
+    try {
+      const response = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/add-user', {
+
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+      alert('Account created successfully!');
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to create account.');
+    }
   };
 
   return (
     <div className="sign-up-page">
-     
       <div className="sign-up">
         <h2>
           <span className="Create">Create</span> <span className="Account">Account</span>
@@ -47,7 +73,7 @@ const SignUpDonor = () => {
           />
           <input 
             type="text" 
-            placeholder="Description(optional)" 
+            placeholder="Description (optional)" 
             value={description} 
             onChange={(e) => setDescription(e.target.value)} 
           />
@@ -74,4 +100,4 @@ const SignUpDonor = () => {
   );
 };
 
-export default SignUpDonor;
+export default SignUp;
