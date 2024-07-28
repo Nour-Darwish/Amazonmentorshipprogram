@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Footer from './Footer';
 import './SignUp.css';
 
@@ -9,6 +10,8 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [description, setDescription] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +25,6 @@ const SignUp = () => {
 
     try {
       const response = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/add-user', {
-
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,6 +39,9 @@ const SignUp = () => {
       const data = await response.json();
       console.log('Success:', data);
       alert('Account created successfully!');
+      
+      // Redirect to the account page
+      navigate('/AccountPage');  // Use navigate to redirect
     } catch (error) {
       console.error('Error:', error);
       alert('Failed to create account.');
