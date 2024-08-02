@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
 import './PasswordReset.css';
-import { useLocation } from 'react-router-dom';
 
 const PasswordReset = () => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [token, setToken] = useState('');
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
 
+  const navigate = useNavigate();
   const query = new URLSearchParams(useLocation().search);
 
   useEffect(() => {
@@ -18,22 +23,22 @@ const PasswordReset = () => {
 
   const handleResetPassword = async () => {
     if (newPassword === '') {
-      alert('Please enter a new password.');
+      setError('Please enter a new password.');
       return;
     }
 
     if (confirmPassword === '') {
-      alert('Please confirm your new password.');
+      setError('Please confirm your new password.');
       return;
     }
 
     if (newPassword !== confirmPassword) {
-      alert('Passwords do not match.');
+      setError('Passwords do not match.');
       return;
     }
 
     try {
-      const response = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/reset-password', { 
+      const response = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/reset-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,38 +52,45 @@ const PasswordReset = () => {
 
       const data = await response.json();
       console.log('Success:', data);
-      alert('Password has been successfully reset.');
-      setNewPassword('');
-      setConfirmPassword('');
+      setMessage('Password has been successfully reset.');
+      setError('');
+
+      // Redirect to AccountPage after a short delay to allow the message to be seen
+      setTimeout(() => navigate('/AccountPage'), 2000);
     } catch (error) {
       console.error('Error:', error);
-      alert('Failed to reset password.');
+      setError('Failed to reset password.');
+      setMessage('');
     }
   };
 
   return (
-    <div className="container">
-      <div className="reset-box">
+    <div className="password-reset-page">
+      <Header />
+      <div className="password-reset">
         <h2>Reset Your Password</h2>
-        <p className="subtext">New password must be different than previous ones</p>
-        <input
-          type="password"
-          placeholder="Enter new password:"
-          className="input"
-          value={newPassword}
-          onChange={(e) => setNewPassword(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Confirm new password:"
-          className="confirm-password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-        <button type="button" id="reset-button" onClick={handleResetPassword}> {/* Change type to button */}
-          Reset Password
-        </button>
+        <p className="subtext">Your new password must be different from previous ones.</p>
+        {message && <div className="message success">{message}</div>}
+        {error && <div className="message error">{error}</div>}
+        <form onSubmit={(e) => { e.preventDefault(); handleResetPassword(); }}>
+          <input
+            type="password"
+            placeholder="Enter new password"
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Confirm new password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Reset Password</button>
+        </form>
       </div>
+      <Footer />
     </div>
   );
 };
