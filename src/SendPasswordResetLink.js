@@ -1,41 +1,62 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './SendPasswordResetLink.css';
+import Header from './Header';
+import Footer from './Footer';
+import forgetpass from './Forgot password-amico.png'; // Adjust the path according to the actual location
 
-function App() {
-  const handleResetClick = (event) => {
-    event.preventDefault();
-    const email = document.getElementById('email-input').value;
+const SendPasswordResetLink = () => {
+  const [email, setEmail] = useState('');
+  const navigate = useNavigate();
 
-    if (validateEmail(email)) {
-      alert('Password reset link has been sent to ' + email);
-    } else {
-      alert('Please enter a valid email address.');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/send-reset-password-link', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+      alert('Reset password link has been sent to your email!');
+      navigate('/login');
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to send reset password link.');
     }
   };
 
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  };
-
   return (
-    <div className="container">
-      <div className="reset-box">
-        <div className="image-and-text">
-          <img src="password.pnj.png" className="password-img" alt="Password Reset" />
-          <div className="text-content">
-            <h2>Reset Your Password</h2>
-            <p className="subtext">Enter the email address you registered with:</p>
-            <input type="email" placeholder="Email address" className="input" id="email-input" />
-            <button type="submit" id="reset-button" onClick={handleResetClick}>
-              Send Password Reset Link
-            </button>
-            <p className="back-to-signin">Back to sign in</p>
-          </div>
+    <div className="reset-password-page">
+      <Header />
+      <div className="reset-password">
+        <div className="reset-password-content">
+          <h2><span className="reset-text">Reset</span> <span className="password-text">Password</span></h2>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button type="submit">Send Reset Link</button>
+          </form>
         </div>
+        <img src={forgetpass} alt="Reset Password Illustration" className="reset-password-illustration" />
       </div>
+      <Footer />
     </div>
   );
-}
+};
 
-export default App;
+export default SendPasswordResetLink;

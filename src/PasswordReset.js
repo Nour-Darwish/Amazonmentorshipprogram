@@ -1,11 +1,22 @@
-import React,{ useState } from 'react';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import './PasswordReset.css';
+import { useLocation } from 'react-router-dom';
 
-function App() {
+const PasswordReset = () => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [token, setToken] = useState('');
 
-  const handleResetPassword = () => {
+  const query = new URLSearchParams(useLocation().search);
+
+  useEffect(() => {
+    const tokenFromUrl = query.get('token');
+    if (tokenFromUrl) {
+      setToken(tokenFromUrl);
+    }
+  }, [query]);
+
+  const handleResetPassword = async () => {
     if (newPassword === '') {
       alert('Please enter a new password.');
       return;
@@ -20,10 +31,31 @@ function App() {
       alert('Passwords do not match.');
       return;
     }
-    alert('Password has been successfully reset.');
-    setNewPassword('');
-    setConfirmPassword('');
+
+    try {
+      const response = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/reset-password', { 
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token, newPassword }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+      alert('Password has been successfully reset.');
+      setNewPassword('');
+      setConfirmPassword('');
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to reset password.');
+    }
   };
+
   return (
     <div className="container">
       <div className="reset-box">
@@ -43,12 +75,12 @@ function App() {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <button type="submit" id="reset-button" onClick={handleResetPassword}>
+        <button type="button" id="reset-button" onClick={handleResetPassword}> {/* Change type to button */}
           Reset Password
         </button>
       </div>
     </div>
   );
-}
+};
 
-export default App;
+export default PasswordReset;
