@@ -11,7 +11,7 @@ const PasswordReset = () => {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
-  const navigate = useNavigate();
+  
   const query = new URLSearchParams(useLocation().search);
 
   useEffect(() => {
@@ -55,8 +55,7 @@ const PasswordReset = () => {
       setMessage('Password has been successfully reset.');
       setError('');
 
-      // Redirect to AccountPage after a short delay to allow the message to be seen
-      setTimeout(() => navigate('/AccountPage'), 2000);
+      
     } catch (error) {
       console.error('Error:', error);
       setError('Failed to reset password.');
@@ -68,8 +67,9 @@ const PasswordReset = () => {
     <div className="password-reset-page">
       <Header />
       <div className="password-reset">
-        <h2>Reset Your Password</h2>
-        <p className="subtext">Your new password must be different from previous ones.</p>
+        <h2>
+          <span className="reset">Reset</span> <span className="password">Password</span>
+        </h2>
         {message && <div className="message success">{message}</div>}
         {error && <div className="message error">{error}</div>}
         <form onSubmit={(e) => { e.preventDefault(); handleResetPassword(); }}>
