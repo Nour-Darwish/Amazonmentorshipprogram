@@ -1,18 +1,12 @@
-import React, { useState } from 'react';
-import './FAQs.css';
+import React from 'react';
+import './FAQItem.css';
 
-const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleAnswer = () => {
-    setIsOpen(!isOpen);
-  };
-
+const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
-    <div className="faq-item">
-      <div className="faq-question" onClick={toggleAnswer}>
-        {question}
-        <span className={`arrow ${isOpen ? 'rotate' : ''}`}>{'>'}</span>
+    <div className={`faq-item ${isOpen ? 'open' : ''}`}>
+      <div className="faq-question" onClick={onClick}>
+        <span>{question}</span>
+        <span className={`arrow ${isOpen ? 'rotate' : ''}`}>&#9662;</span> {/* Modern down arrow */}
       </div>
       {isOpen && <div className="faq-answer">{answer}</div>}
     </div>

@@ -23,7 +23,8 @@ const RequestConfirmation = () => {
     navigate(-1); // Go back to the previous page
   };
 
-  const whatsappLink = `https://wa.me/961200200?text=Hello%20${donation.donor},%20I'm%20interested%20in%20your%20food%20donation:%20${donation.description}%20(${donation.quantity})%20expiring%20on%20${donation.expirationDate}.`;
+  // Construct the WhatsApp link using the donor's phone number from the donation object
+  const whatsappLink = `https://wa.me/${donation.donorPhoneNumber}?text=Hello%20${encodeURIComponent(donation.donorName)},%20I'm%20interested%20in%20your%20food%20donation:%20${encodeURIComponent(donation.description)}%20(${encodeURIComponent(donation.quantity)})%20expiring%20on%20${encodeURIComponent(donation.expirationDate)}.`;
 
   return (
     <div className="main-container">
@@ -38,10 +39,11 @@ const RequestConfirmation = () => {
           </div>
           <div className="donor-info">
             <h3>Donor Info:</h3>
-            <p>Name: {donation.donor}</p>
+            <p>Name: {donation.donorName}</p>
+            <p>Phone: {donation.donorPhoneNumber}</p>
             <p>
-            Get in touch with the donor for more information:{' '}
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">  Click here to chat on Whatsapp</a>.
+              Get in touch with the donor for more information:{' '}
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">Click here to chat on WhatsApp</a>.
             </p>
           </div>
         </div>

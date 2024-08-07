@@ -5,22 +5,20 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh; 
-  
+  margin-top: -150px;
   background-image: url("background.jpg");
   background-size: cover;
   background-position: center;
-  padding: 20px; 
+ 
 }
 
 .login {
   width: 70%; 
   max-width: 700px; 
-  padding: 20px; 
+  padding: 10px; 
   background: rgba(255, 255, 255, 0.95); 
   border-radius: 12px; 
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); 
-  
- 
   overflow: hidden;
   text-align: center;
 }
@@ -31,6 +29,24 @@
   margin-bottom: 25px;
   font-size: 2.5rem; 
   color: #039855; 
+}
+.login label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+  width: 100%;
+  max-width: 530px;
+  
+  text-align: left;
+  /*  display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: #333;*/
 }
 
 .welcome {
@@ -124,6 +140,7 @@
 .login p a:hover {
   text-decoration: underline;
 }
+
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {

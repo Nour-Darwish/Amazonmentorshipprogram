@@ -9,6 +9,8 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { login } = useAuth();
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -35,7 +37,9 @@ const Login = () => {
       console.log('Success:', data);
 
       if (data === "login successful") {
-        alert('Login successful!');
+      setMessage('Login successful!');
+      setError('');
+      setTimeout(() => navigate('/AccountPage'), 1500);
 
         // Fetch user data
         const userResponse = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/get-user', {
@@ -55,13 +59,11 @@ const Login = () => {
         // Save user data in context and localStorage
         login(userData);
 
-        navigate('/AccountPage');
-      } else {
-        alert(data);
-      }
+      } 
     } catch (error) {
       console.error('Error:', error);
-      alert('Failed to log in.');
+     setError('Failed to log in.');
+      setMessage('');
     }
   };
 
@@ -71,18 +73,22 @@ const Login = () => {
         <h2>
           <span className="welcome">Welcome</span> <span className="back">Back!</span>
         </h2>
+        {message && <div className="message success">{message}</div>}
+        {error && <div className="message error">{error}</div>}
         <form onSubmit={handleSubmit}>
+        <label>Email Address</label>
           <input
             type="email"
-            placeholder="Email Address"
+            placeholder="Enter your email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
           <div className="password-container">
+          <label>Password</label>
             <input
               type="password"
-              placeholder="Password"
+              placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required

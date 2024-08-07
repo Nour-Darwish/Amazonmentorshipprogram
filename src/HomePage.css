@@ -44,16 +44,30 @@ body {
   margin: 0 10px;
   padding: 15px 30px;
   border: none;
-  background-color: #039855;
-  color: white;
   cursor: pointer;
   font-size: 1rem;
   text-transform: uppercase;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.hero-button:hover {
+.primary-button {
+  background-color: #039855;
+  color: white;
+}
+
+.secondary-button {
+  background-color: #fff;
+  color: #039855;
+  border: 1px solid #039855;
+}
+
+.primary-button:hover {
   background-color: #027a47;
+  transform: translateY(-3px);
+}
+
+.secondary-button:hover {
+  background-color: #e6f7f2;
   transform: translateY(-3px);
 }
 
@@ -64,22 +78,75 @@ body {
 }
 
 @keyframes slideInDown {
-  0% { transform: translateY(-100px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+  0% { transform: translateY(-50px); }
+  100% { transform: translateY(0); }
+}
+
+/* Mission Section */
+.mission-section {
+  padding: 50px 20px;
+  background-color: #ffffff; /* Ensure no background image is applied */
+  text-align: center;
+}
+
+.mission-section h2 {
+  font-size: 2.5rem;
+  color: #039855;
+  margin-bottom: 20px;
+}
+
+.mission-section p {
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* About Us Section */
+.about-us-section {
+  padding: 60px 20px;
+  background: #ffffff;
+  text-align: center;
+  color: #333;
+}
+
+.about-us-section h2 {
+  font-size: 2.8rem;
+  color: #039855;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.about-us-section p {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: justify;
+  text-align: left;
+}
+
+.carousel-container {
+  margin-top: 40px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
 }
 
 /* How It Works Section */
 .how-it-works {
-  background-color: white; /* Ensure the background is white */
+  background-color: #ffffff;
   padding: 50px 20px;
   text-align: center;
 }
 
 .how-it-works h2 {
-  margin-bottom: 30px;
-  font-weight: 700;
   font-size: 2.5rem;
-  font-family: 'Inter', sans-serif;
+  color: #039855;
+  margin-bottom: 40px;
 }
 
 .steps {
@@ -90,153 +157,110 @@ body {
 }
 
 .step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 450px;
-  flex: 1;
-  text-align: center;
-  margin-bottom: 40px;
-  padding: 20px;
-  box-sizing: border-box;
+  max-width: 300px;
+  background-color: white; /* Ensure background is white */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.step:hover {
+  transform: translateY(-5px);
 }
 
 .step img {
   width: 100%;
-  height: auto;
+  height: 200px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
 .step-text-box {
-  background: white;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 30px;
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.step:hover .step-text-box {
+.step-text-box p {
+  font-size: 1.1rem;
+  color: #333;
+  text-align: left; /* Align text to the left */
+}
+
+/* Join Community Button */
+.join-community-button {
+  margin-top: 30px;
+  padding: 15px 30px;
+  border: none;
   background-color: #039855;
   color: white;
-  transform: translateY(-10px);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.step p {
-  font-size: 20px;
-  margin: 0;
-  font-family: 'Inter', sans-serif;
+.join-community-button:hover {
+  background-color: #027a47;
+  transform: translateY(-3px);
 }
 
 /* Food Facts Section */
 .food-facts {
-  background: #f9f9f9;
+  background-color:  #ffffff;
   padding: 50px 20px;
   text-align: center;
 }
 
 .food-facts h2 {
-  margin-bottom: 30px;
-  font-weight: 700;
   font-size: 2.5rem;
+  color: #039855;
+  margin-bottom: 40px;
 }
 
 .facts-grid {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .fact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 450px;
-  flex: 1;
-  text-align: center;
-  margin-bottom: 40px;
-  padding: 20px;
-  box-sizing: border-box;
+  max-width: 300px;
+  background-color: white; /* Ensure background is white */
+  border-radius: 10px;
+  overflow: hidden;
+  
+  transition: transform 0.3s ease-in-out;
+}
+
+.fact:hover {
+  transform: translateY(-5px);
 }
 
 .fact img {
   width: 100%;
-  height: auto;
+  height: 200px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
 .fact-text-box {
-  background: white;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 30px;
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.fact:hover .fact-text-box {
+.fact-text-box p {
+  font-size: 1.1rem;
+  color: #333;
+  text-align: left; /* Align text to the left */
+}
+
+/* Footer */
+footer {
   background-color: #039855;
   color: white;
-  transform: translateY(-10px);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
 }
 
-.fact p {
-  font-size: 20px;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .hero-content h1 {
-      font-size: 2.5rem;
-  }
-
-  .hero-content p {
-      font-size: 1rem;
-  }
-
-  .hero-button {
-      font-size: 0.875rem;
-      padding: 10px 20px;
-  }
-
-  .how-it-works h2,
-  .food-facts h2 {
-      font-size: 2rem;
-  }
-
-  .steps,
-  .facts-grid {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .step,
-  .fact {
-      max-width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h1 {
-      font-size: 2rem;
-  }
-
-  .hero-content p {
-      font-size: 0.875rem;
-  }
-
-  .hero-button {
-      font-size: 0.75rem;
-      padding: 8px 16px;
-  }
-
-  .how-it-works h2,
-  .food-facts h2 {
-      font-size: 1.5rem;
-  }
+footer p {
+  margin: 0;
+  font-size: 1rem;
 }
