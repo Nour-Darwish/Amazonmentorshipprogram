@@ -15,7 +15,6 @@ const Header = () => {
       </div>
       <nav>
         <ul className="nav">
-          <li><Link to="/">Home</Link></li>
           <li><Link to="/AccountPage">Account Page</Link></li>
           <li><Link to="/DonationForm">Donate</Link></li>
           <li><Link to="/DonationFeed">Receive</Link></li>

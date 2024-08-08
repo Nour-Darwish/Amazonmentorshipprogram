@@ -1,12 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 import './HomePage.css';
 import ImageCarousel from './ImageCarousel';
 
-
-
 const HomePage = () => {
+  const navigate = useNavigate();
+
+  const handleJoinCommunityClick = () => {
+    navigate('/SignUp'); // Navigate to the SignUp page
+  };
+
   return (
     <div>
       <div className="hero-section">
@@ -56,7 +60,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <button className="join-community-button">Join the Community</button>
+        <button className="join-community-button" onClick={handleJoinCommunityClick}>Join the Community</button>
       </div>
       <div className="food-facts">
         <h2>Food waste facts in Lebanon</h2>

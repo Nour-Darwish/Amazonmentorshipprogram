@@ -11,7 +11,7 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [description, setDescription] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [countryCode, setCountryCode] = useState('+1');
+  const [countryCode, setCountryCode] = useState('+961');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
