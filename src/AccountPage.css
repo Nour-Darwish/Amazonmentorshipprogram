@@ -131,3 +131,76 @@
     background-color: #028846;
     
 }
+@media (max-width: 768px) {
+    .account {
+        margin: 100px auto; /* Reduce margin for tablets */
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .account h2 {
+        font-size: 40px; /* Smaller font size for headings */
+    }
+
+    .profile-picture {
+        top: -20px; /* Slightly adjust the image position */
+    }
+
+    .profile-picture img {
+        width: 200px; /* Smaller profile picture */
+        height: 200px;
+    }
+
+    .profile-info-item p,
+    .profile-info-item label {
+        font-size: 18px; /* Smaller text size */
+    }
+
+    .profile-info-item input,
+    .profile-info-item textarea {
+        font-size: 16px; /* Smaller font size */
+    }
+
+    .edit-button {
+        padding: 10px 20px; /* Smaller padding */
+        width: 100px; /* Smaller button width */
+        font-size: 0.9rem; /* Smaller font size */
+        margin-top: 30px; /* Reduce top margin */
+    }
+}
+
+@media (max-width: 480px) {
+    .account {
+        margin: 50px auto; /* Further reduce margin for mobile */
+        padding: 15px; /* Further reduce padding */
+    }
+
+    .account h2 {
+        font-size: 30px; /* Even smaller font size for headings */
+    }
+
+    .profile-picture {
+        top: -10px; /* Adjust the image position */
+    }
+
+    .profile-picture img {
+        width: 150px; /* Even smaller profile picture */
+        height: 150px;
+    }
+
+    .profile-info-item p,
+    .profile-info-item label {
+        font-size: 16px; /* Even smaller text size */
+    }
+
+    .profile-info-item input,
+    .profile-info-item textarea {
+        font-size: 14px; /* Even smaller font size */
+    }
+
+    .edit-button {
+        padding: 8px 15px; /* Further reduce padding */
+        width: 90px; /* Smaller button width */
+        font-size: 0.8rem; /* Smaller font size */
+        margin-top: 20px; /* Further reduce top margin */
+    }
+}

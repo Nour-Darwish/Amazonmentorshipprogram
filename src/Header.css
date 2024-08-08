@@ -70,3 +70,52 @@
   margin-left: auto;
   margin-right: auto; /* Centers the nav within the header */
 }
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 15px; /* Less padding for smaller screens */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo-container {
+    margin-left: 0; /* Remove left margin on smaller screens */
+    margin-bottom: 10px; /* Space below logo-container */
+  }
+
+  .logo {
+    width: 80px; /* Smaller logo on mobile */
+  }
+
+  .logo-text {
+    font-size: large; /* Smaller font size on mobile */
+  }
+
+  .header nav {
+    width: 100%; /* Full width for mobile nav */
+    display: block; /* Stack navigation vertically */
+    margin-top: 10px; /* Space above navigation */
+  }
+
+  .header nav ul {
+    display: block;
+    gap: 10px; /* Smaller gap between items */
+  }
+
+  .header nav ul li {
+    margin-bottom: 10px; /* Space below each navigation item */
+  }
+
+  .header nav ul li a {
+    font-size: large; /* Smaller font size on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: medium; /* Further reduce font size */
+  }
+
+  .header nav ul li a {
+    font-size: medium; /* Further reduce font size */
+  }
+}
