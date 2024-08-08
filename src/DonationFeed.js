@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-
 import './DonationFeed.css';
 
 const DonationFeed = () => {
@@ -10,7 +9,7 @@ const DonationFeed = () => {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
   const [filters, setFilters] = useState({ type: 'all' });
- 
+
   const navigate = useNavigate();
   const apiUrl = 'https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/get-available-donations';
 
@@ -52,7 +51,10 @@ const DonationFeed = () => {
     
   };
 
- 
+  const handleImageClick = (src) => {
+    setLightboxImage(src);
+    setIsLightboxOpen(true);
+  };
 
   const filteredDonations = donations.filter(donation => {
     const matchesSearch = donation.description.toLowerCase().includes(search.toLowerCase());
@@ -114,7 +116,12 @@ const DonationFeed = () => {
         )}
       </div>
       <Footer />
-      
+      <Lightbox
+        isOpen={isLightboxOpen}
+        onClose={() => setIsLightboxOpen(false)}
+        src={lightboxImage}
+        alt="Donation image"
+      />
     </div>
   );
 };
