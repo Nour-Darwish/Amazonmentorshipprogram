@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import './HomePage.css';
+import ImageCarousel from './ImageCarousel';
+
 
 
 const HomePage = () => {
@@ -30,6 +32,7 @@ const HomePage = () => {
       <div className="about-us-section">
         <h2>About Us</h2>
         <p>We are a group of five Lebanese girls with a shared passion for fighting hunger and reducing food waste. Our journey began with volunteering at various food NGOs, where we actively participated in cooking and distributing meals, setting up kiosks to raise awareness about food waste, and collecting donations. We even visited supermarkets to purchase food for those in need. These experiences deeply inspired us and motivated us to create our own platform dedicated to connecting those with surplus food to those who need it the most. Through our website, we aim to build a stronger, more supportive community and make a significant impact in the fight against hunger and food waste in Lebanon.</p>
+        <ImageCarousel />
       </div>
       <div className="how-it-works">
         <h2>How it works</h2>
