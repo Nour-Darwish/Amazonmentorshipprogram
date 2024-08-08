@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import Lightbox from './LightBox';
 import './DonationFeed.css';
 
 const DonationFeed = () => {
@@ -11,7 +10,6 @@ const DonationFeed = () => {
   const [search, setSearch] = useState('');
   const [filters, setFilters] = useState({ type: 'all' });
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const [lightboxImage, setLightboxImage] = useState('');
   const navigate = useNavigate();
   const apiUrl = 'https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/get-available-donations';
 
@@ -53,11 +51,6 @@ const DonationFeed = () => {
     
   };
 
-  const handleImageClick = (src) => {
-    setLightboxImage(src);
-    setIsLightboxOpen(true);
-  };
-
   const filteredDonations = donations.filter(donation => {
     const matchesSearch = donation.description.toLowerCase().includes(search.toLowerCase());
     const matchesType = filters.type === 'all' || donation.foodtype === filters.type;
@@ -97,7 +90,7 @@ const DonationFeed = () => {
                 alt={donation.description || 'Donation image'} 
                 className="donation-image" 
                 loading="lazy" 
-                onClick={() => handleImageClick(donation['donation-picture'])}
+                
               />
               <div className="donation-info">
                 <h3>Donor: {donation.donorName}</h3>
@@ -118,12 +111,6 @@ const DonationFeed = () => {
         )}
       </div>
       <Footer />
-      <Lightbox
-        isOpen={isLightboxOpen}
-        onClose={() => setIsLightboxOpen(false)}
-        src={lightboxImage}
-        alt="Donation image"
-      />
     </div>
   );
 };
