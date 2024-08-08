@@ -51,10 +51,6 @@ const DonationFeed = () => {
     
   };
 
-  const handleImageClick = (src) => {
-    setLightboxImage(src);
-    setIsLightboxOpen(true);
-  };
 
   const filteredDonations = donations.filter(donation => {
     const matchesSearch = donation.description.toLowerCase().includes(search.toLowerCase());
@@ -116,12 +112,7 @@ const DonationFeed = () => {
         )}
       </div>
       <Footer />
-      <Lightbox
-        isOpen={isLightboxOpen}
-        onClose={() => setIsLightboxOpen(false)}
-        src={lightboxImage}
-        alt="Donation image"
-      />
+     
     </div>
   );
 };
