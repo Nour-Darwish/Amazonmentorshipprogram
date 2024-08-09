@@ -227,7 +227,7 @@ body {
   background-color: white; /* Ensure background is white */
   border-radius: 10px;
   overflow: hidden;
-  
+  margin-bottom: 30px;
   transition: transform 0.3s ease-in-out;
 }
 

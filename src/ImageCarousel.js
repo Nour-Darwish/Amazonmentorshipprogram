@@ -6,11 +6,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import image1 from './images/ruba.jpeg';
 import image2 from './images/nourcooking.jpeg';
-import image3 from './images/lynnbasma.jpeg';
 import image4 from './images/nouraatkiosk.jpeg';
 import image5 from './images/lynnfoodblessed.jpeg';
 import image6 from './images/nour.jpeg';
 import image7 from './images/nouracake.jpeg';
+import image3 from './lynnbasma.jpeg';
 import './ImageCarousel.css';
 
 const ImageCarousel = () => {
