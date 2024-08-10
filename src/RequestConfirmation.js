@@ -1,22 +1,49 @@
-import React from 'react';
+import React , { useContext, useState }from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import './RequestConfirmation.css';
+import { useAuth} from './AuthContext';
 
 const RequestConfirmation = () => {
+  const { user } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   const { donation } = location.state || {};
+  const [error, setError] = useState('');
 
   if (!donation) {
     return <p>No donation selected.</p>;
   }
 
-  const handleConfirm = () => {
-    // Placeholder for API call
-    console.log('Request confirmed:', donation);
-    navigate('/SuccessConfirmation'); 
+  const handleConfirm = async () => {
+    try {
+      const response = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/request-donation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          donationId: donation.donationID,
+          requesterEmail:  user.email,
+          donorEmail: donation.emailofDonor,
+          donationDetails: {
+            quantity: donation.quantity,
+            foodtype: donation.foodtype,
+            expirationDate: donation.expirationDate,
+          }
+        }),
+      });
+      if (response.ok) {
+        console.log('Request confirmed:', donation);
+        navigate('/SuccessConfirmation'); 
+      } else {
+        throw new Error('Failed to request donation');
+      }
+    } catch (error) {
+      console.error('Error requesting donation:', error);
+      setError('An error occurred while requesting the donation. Please try again later.'); // Set error message
+    }
   };
 
   const handleBack = () => {
@@ -58,3 +85,5 @@ const RequestConfirmation = () => {
 };
 
 export default RequestConfirmation;
+
+
