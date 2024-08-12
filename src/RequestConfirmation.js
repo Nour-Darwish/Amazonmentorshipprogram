@@ -25,9 +25,12 @@ const RequestConfirmation = () => {
         },
         body: JSON.stringify({
           donationId: donation.donationID,
+        
           requesterEmail:  user.email,
           donorEmail: donation.emailofDonor,
           donationDetails: {
+            
+            description: donation.description,
             quantity: donation.quantity,
             foodtype: donation.foodtype,
             expirationDate: donation.expirationDate,

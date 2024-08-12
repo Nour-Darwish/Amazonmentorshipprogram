@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
    margin-top: -110px;
+  
 }
 
 /* Styling for the FAQ container */
@@ -26,7 +27,8 @@
     justify-content: space-between;
     gap: 25px; /* Space between content and image */
     position: relative; /* Add relative positioning */
-    
+    height: 500px;
+
 }
 
 /* Styling for the illustration */
@@ -41,6 +43,9 @@
 .faq-content {
     flex: 1;
     margin-top: 100px;
+    max-height: 350px; /* Ensure content doesn't exceed the container height */
+    overflow-y: auto; /* Add a scrollbar if the content overflows */
+    padding-right: 10px; /* Space for scrollbar */
 }
 
 /* Styling for the FAQ heading */

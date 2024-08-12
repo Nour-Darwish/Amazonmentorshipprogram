@@ -5,13 +5,13 @@
     background-size: cover;
     background-position: center;
     font-family: "Inter", sans-serif;
-    
+    min-height: 100vh; 
 }
 
 .account {
     width: 100%;
     max-width: 800px;
-    margin: 150px auto;
+    margin: 140px auto;
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 11px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
@@ -166,6 +166,7 @@
         font-size: 0.9rem; /* Smaller font size */
         margin-top: 30px; /* Reduce top margin */
     }
+    
 }
 
 @media (max-width: 480px) {

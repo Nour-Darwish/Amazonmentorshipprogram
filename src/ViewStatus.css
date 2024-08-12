@@ -16,7 +16,7 @@ body, html {
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+ 
   }
   
   .status-container {
@@ -24,21 +24,32 @@ body, html {
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 90%;
     max-width: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 85vh;
+    margin-top: 50px; /* Adjusted the margin-top to add space below the header */
+    transform: scale(0.8); /* Removed scaling to avoid shrinking the box */
+    position: relative; 
     
   }
   
-  .status-heading {
-    font-size: 2.5rem;
-    color: #333333;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: bold;
+  
+    .status-container h2 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      color: black;
+      text-align: center;
+      font-size: 50px; /* Adjusted for consistency */
+      margin-bottom: 30px; /* Consistent margin */
   }
+  .status-heading{
+      color: #039855;
+  }
+ 
+  
   
   .status-section {
     width: 100%;
@@ -65,6 +76,8 @@ body, html {
     justify-content: space-between;
     align-items: center;
     transition: transform 0.3s;
+    min-height: 150px; /* Ensures a minimum height */
+  height: 150px; 
   }
   
   .status-card:hover {
