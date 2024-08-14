@@ -1,95 +1,78 @@
-/* General styling for the main container */
 .main-container {
   font-family: "Inter", sans-serif;
   background-image: url('background.jpg');
   background-size: cover;
   background-position: center;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
   align-items: center;
-  
 }
 
 /* Styling for the success container */
-.successrequest-container {
+.success-container {
   background-color: rgba(255, 255, 255, 0.95);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   display: flex;
-  align-items: center; /* Align items vertically in the center */
-  max-width: 800px;
-  width: 100%; /* Ensure the container takes up the full width available */
- 
+  align-items: center;
+  max-width: 900px;
+  width: 90%;
   margin: 20px; /* Add margin for spacing */
 }
 
 /* Styling for the success image */
-.successrequest-image {
-  width: 350px;
-  height: 350px;
+.success-image {
+  width: 300px;
+  height: auto;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 20px;
   margin-right: 20px; /* Spacing between image and text */
-  flex-shrink: 0; /* Prevent image from shrinking */
 }
 
-/* Styling for the success message */
-.success-message {
-  flex: 1; /* Allow the text container to take up the remaining space */
-  text-align: center; /* Center the text inside its container */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content vertically */
+/* Styling for the success details */
+.success-details {
+  flex: 1;
+}
+
+/* Styling for the success heading */
+.success-heading {
+  font-size: 2.8rem;
+  color: #039855;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: center; /* Center the heading */
 }
 
 /* Styling for the success text */
 .success-text {
   font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 20px;
+  color: #666;
+  margin-bottom: 25px;
   line-height: 1.6;
-  font-weight: 500;
+  font-weight: 400;
+  text-align: center; /* Center the text */
 }
 
-/* Styling for action links */
-.actions {
-  display: flex;
-  justify-content: center; /* Center the action links */
-  gap: 15px;
-  flex-wrap: wrap; /* Allow action links to wrap on smaller screens */
-}
-
-/* Common styling for action links */
+/* Styling for the status link */
 .status-link {
+  display: inline-block;
   padding: 12px 25px;
   background-color: #039855;
   color: white;
   border-radius: 25px;
   text-align: center;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
 }
 
-/* Hover effect for action links */
 .status-link:hover {
   background-color: #028a4c;
-  transform: translateY(-3px);
+  transform: translateY(-2px); /* Slight hover effect */
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-  .successrequest-container {
-      flex-direction: column; /* Stack image and text on top of each other */
-      align-items: center;
-      text-align: center;
-  }
-
-  .successrequest-image {
-      margin-right: 0;
-      margin-bottom: 20px; /* Add space between the image and text when stacked */
-  }
-}

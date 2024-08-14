@@ -142,32 +142,3 @@
 }
 
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .login {
-    width: 90%;
-    padding: 30px;
-  }
-
-  .login h2 {
-    font-size: 2rem;
-  }
-
-  .login input, .forgot-password, .login button {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .login h2 {
-    font-size: 1.5rem;
-  }
-
-  .login input {
-    padding: 10px;
-  }
-
-  .login button {
-    width: 80%;
-  }
-}

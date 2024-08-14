@@ -87,19 +87,4 @@
     }
 }
 
-@media (max-width: 480px) {
-    .faq-container {
-        padding: 15px; /* Reduce padding for mobile screens */
-        gap: 15px; /* Further reduce gap */
-    }
 
-    .faq-illustration {
-        max-width: 200px; /* Smaller size for mobile screens */
-    }
-
-    .faq-title {
-        font-size: 1.75rem; /* Even smaller font size for mobile screens */
-        margin-top: 10px; /* Adjust top margin for better spacing */
-        top: 0; /* Reset top positioning */
-    }
-}

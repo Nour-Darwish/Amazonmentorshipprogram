@@ -63,9 +63,9 @@ const RequestConfirmation = () => {
         <h2>Confirm request details:</h2>
         <div className="confirmation-content">
           <div className="donation-details">
-            <p>{donation.description}</p>
-            <p>{donation.quantity}</p>
-            <p>Exp Date: {donation.expirationDate}</p>
+            <p>Description: {donation.description}</p>
+            <p>Quantity: {donation.quantity}</p>
+            <p>Expiraion Date: {donation.expirationDate}</p>
           </div>
           <div className="donor-info">
             <h3>Donor Info:</h3>

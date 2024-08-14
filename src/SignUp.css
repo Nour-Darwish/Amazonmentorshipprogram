@@ -145,31 +145,3 @@
   text-align: center;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .sign-up, .login {
-    width: 90%;
-    padding: 30px;
-  }
-
-  .sign-up h2, .login h2 {
-    font-size: 2rem;
-  }
-
-  .sign-up input, .sign-up button, .login input, .login button {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .sign-up h2, .login h2 {
-    font-size: 1.5rem;
-  }
-
-  .sign-up input, .login input {
-    padding: 10px;
-  }
-
-  .sign-up button, .login button {
-    width: 80%;
-  }}

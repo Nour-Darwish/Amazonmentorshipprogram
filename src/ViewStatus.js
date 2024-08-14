@@ -6,6 +6,9 @@ import { useAuth } from './AuthContext';
 const ViewStatus = () => {
   const [incomingRequests, setIncomingRequests] = useState([]);
   const [outgoingRequests, setOutgoingRequests] = useState([]);
+  const [donations, setDonations] = useState([]); // Initialize the state
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const { user } = useAuth();
   const apiUrl = 'https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/get-requests';
 
@@ -18,9 +21,10 @@ const ViewStatus = () => {
             'Content-Type': 'application/json',
           },
         });
+
         if (response.ok) {
           const data = await response.json();
-
+          
           // Separate the requests into incoming and outgoing based on the user's email
           const incoming = data.filter(
             (request) => request.emailofDonor === user.email
@@ -35,7 +39,10 @@ const ViewStatus = () => {
           throw new Error('Failed to fetch requests');
         }
       } catch (error) {
+        setError(error.message);
         console.error('Error fetching requests:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -44,26 +51,72 @@ const ViewStatus = () => {
     }
   }, [user]);
 
-  const handleAccept = (id) => {
-    setIncomingRequests((prevRequests) =>
-      prevRequests.filter((request) => request['request-id'] !== id)
-    );
-    // Add logic to handle acceptance, e.g., API call
-   
+  const handleAccept = async (id, donationId) => {
+    try {
+      const response = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/accept-donation-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          requestId: id,
+          donationId: donationId,
+        }),
+      });
+  
+      if (response.ok) {
+        console.log('Accepted request with ID: ${id}');
+        setIncomingRequests((prevRequests) =>
+          prevRequests.filter((request) => request['request-id'] !== id)
+        );
+        // Remove the donation from the feed as well
+        setDonations((prevDonations) =>
+          prevDonations.filter((donation) => donation.donationID !== donationId)
+        );
+      } else {
+        console.error('Failed to accept request');
+      }
+    } catch (error) {
+      console.error('Error accepting request:', error);
+    }
   };
 
-  const handleReject = (id) => {
-    setIncomingRequests((prevRequests) =>
-      prevRequests.filter((request) => request['request-id'] !== id)
-    );
-   
+  const handleReject = async (id) => {
+    try {
+      // Make an API call to update the request status to 'rejected'
+      const response = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/reject-donation-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          requestId: id,
+          status: 'rejected',
+        }),
+      });
+  
+      if (response.ok) {
+        console.log('Rejected request with ID: ${id}');
+        setIncomingRequests((prevRequests) =>
+          prevRequests.filter((request) => request['request-id'] !== id)
+        );
+      } else {
+        console.error('Failed to reject request');
+      }
+    } catch (error) {
+      console.error('Error rejecting request:', error);
+    }
   };
-
   return (
     <div className="view-status-page">
       <Header />
       <div className="status-container">
-        <h2 className="status-heading">View Status</h2>
+      <h2 className="status-heading">
+        <span className="black-text">View</span> <span className="green-text">Status</span>
+        </h2>
+
+        {loading && <p>Loading...</p>}
+        {error && <p className="error-message">Error: {error}</p>}
 
         <div className="status-section">
           <h3>Incoming Requests</h3>
@@ -71,13 +124,13 @@ const ViewStatus = () => {
             incomingRequests.map((request) => (
               <div key={request['request-id']} className="status-card">
                 <div className="info">
-                  <h4>{request.requestername} (Recipient)</h4>
+                  <h4>Recipient:{request.requestername} </h4>
                   <p>Description: {request.donationDetails.description}</p>
                   <p>Expiration Date: {request.donationDetails.expirationDate}</p>
                   <p>Food Type: {request.donationDetails.foodtype}</p>
                   <p>Quantity: {request.donationDetails.quantity}</p>
                   
-                </div>
+                  </div>
                 <div className="buttons">
                   <button
                     className="accept-button"
@@ -105,7 +158,7 @@ const ViewStatus = () => {
             outgoingRequests.map((request) => (
               <div key={request['request-id']} className="status-card">
                 <div className="info">
-                  <h4>{request.donorname} (Donor)</h4>
+                  <h4>Donor:{request.donorname}</h4>
                   <p>Description: {request.donationDetails.description}</p>
                   <p>Expiration Date: {request.donationDetails.expirationDate}</p>
                   <p>Food Type: {request.donationDetails.foodtype}</p>

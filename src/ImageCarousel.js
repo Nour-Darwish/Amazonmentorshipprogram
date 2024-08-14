@@ -12,13 +12,12 @@ const ImageCarousel = () => {
     '/images/nourcooking.jpeg',
     '/images/ruba.jpeg',
     '/images/nouraatkiosk.jpeg',
+    '/images/caleensupermarket.jpeg',
     '/images/lynnfoodblessed.jpeg',
     '/images/nour.jpeg',
     '/images/nouracake.jpeg',
+    './images/caleencheckingitems.jpeg'
     
-    
-
-  
   ];
 
   return (
