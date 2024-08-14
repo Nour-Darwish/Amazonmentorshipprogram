@@ -27,7 +27,7 @@ const ViewStatus = () => {
           
           // Separate the requests into incoming and outgoing based on the user's email
           const incoming = data.filter(
-            (request) => request.emailofDonor === user.email
+            (request) => request.emailofDonor === user.email && request.status !== 'accepted' && request.status !== 'rejected'
           );
           const outgoing = data.filter(
             (request) => request.emailofreceiver === user.email
@@ -51,62 +51,61 @@ const ViewStatus = () => {
     }
   }, [user]);
 
-  const handleAccept = async (id, donationId) => {
-    try {
-      const response = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/accept-donation-request', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          requestId: id,
-          donationId: donationId,
-        }),
-      });
-  
-      if (response.ok) {
-        console.log('Accepted request with ID: ${id}');
-        setIncomingRequests((prevRequests) =>
-          prevRequests.filter((request) => request['request-id'] !== id)
-        );
-        // Remove the donation from the feed as well
-        setDonations((prevDonations) =>
-          prevDonations.filter((donation) => donation.donationID !== donationId)
-        );
-      } else {
-        console.error('Failed to accept request');
+    const handleAccept = async (id, donationId) => {
+      try {
+        const response = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/accept-request', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            requestId: id,
+            donationId: donationId,
+          }),
+        });
+    
+        if (response.ok) {
+          console.log(`Accepted request with ID: ${id}`);
+          // Filter out the accepted request
+          setIncomingRequests((prevRequests) =>
+            prevRequests.filter((request) => request['request-id'] !== id)
+          );
+          // Optionally update the outgoing requests if needed
+        } else {
+          console.error('Failed to accept request');
+        }
+      } catch (error) {
+        console.error('Error accepting request:', error);
       }
-    } catch (error) {
-      console.error('Error accepting request:', error);
-    }
-  };
-
-  const handleReject = async (id) => {
-    try {
-      // Make an API call to update the request status to 'rejected'
-      const response = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/reject-donation-request', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          requestId: id,
-          status: 'rejected',
-        }),
-      });
-  
-      if (response.ok) {
-        console.log('Rejected request with ID: ${id}');
-        setIncomingRequests((prevRequests) =>
-          prevRequests.filter((request) => request['request-id'] !== id)
-        );
-      } else {
-        console.error('Failed to reject request');
+    };
+    
+    const handleReject = async (id) => {
+      try {
+        const response = await fetch('https://gkk8zqlh8h.execute-api.eu-west-2.amazonaws.com/dep/reject-request', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            requestId: id,
+            status: 'rejected',
+          }),
+        });
+    
+        if (response.ok) {
+          console.log(`Rejected request with ID: ${id}`);
+          // Filter out the rejected request
+          setIncomingRequests((prevRequests) =>
+            prevRequests.filter((request) => request['request-id'] !== id)
+          );
+        } else {
+          console.error('Failed to reject request');
+        }
+      } catch (error) {
+        console.error('Error rejecting request:', error);
       }
-    } catch (error) {
-      console.error('Error rejecting request:', error);
-    }
-  };
+    };
+    
   return (
     <div className="view-status-page">
       <Header />
@@ -134,7 +133,7 @@ const ViewStatus = () => {
                 <div className="buttons">
                   <button
                     className="accept-button"
-                    onClick={() => handleAccept(request['request-id'])}
+                    onClick={() => handleAccept(request['request-id'],request.donationID)}
                   >
                     Accept
                   </button>
@@ -164,7 +163,7 @@ const ViewStatus = () => {
                   <p>Food Type: {request.donationDetails.foodtype}</p>
                   <p>Quantity: {request.donationDetails.quantity}</p>
                 </div>
-                <div className ={ 'status ${request.status}'}>
+                <div className ={ `status ${request.status}`}>
                   {request.status}
                 </div>
               </div>
