@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ViewStatus.css';
 import Header from './Header';
+import Footer from './Footer';
 import { useAuth } from './AuthContext';
 
 const ViewStatus = () => {
@@ -173,6 +174,7 @@ const ViewStatus = () => {
           )}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

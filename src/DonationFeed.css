@@ -3,12 +3,13 @@
 .main-container {
     font-family: "Inter", sans-serif;
     background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
+ 
+    background-position: center center; /* Center the image */
     display: flex;
+    background-size: contain;
     flex-direction: column;
     align-items: center; 
-    padding: 40px;
+    
     min-height: 100vh;
 }
 
@@ -155,6 +156,52 @@
     margin-bottom: 25px;
     text-align: center;
 }
+/* Base styling for both fresh and rotten descriptions */
+
+/* Base styling for all descriptions */
+.donation-description {
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    position: relative;
+    font-weight: bold;
+}
+
+/* Specific styling for rotten descriptions */
+.rotten-description {
+    background-color: #ffe6e6;
+    border: 2px solid #ff4c4c;
+    color: #b30000;
+}
+
+/* Unique indicator for rotten descriptions */
+.rotten-description::before {
+    font-size: 1.5rem;
+    position: absolute;
+    left: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Specific styling for fresh descriptions */
+.fresh-description {
+    background-color: #e6ffe6;
+    border: 2px solid #4caf50;
+    color: #2e7d32;
+}
+
+/* Unique indicator for fresh descriptions */
+.fresh-description::before {
+    
+    font-size: 1.5rem;
+    position: absolute;
+    left: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+  
 @media (max-width: 768px) {
     .donation-feed-container {
         margin: 40px auto; /* Adjust margin for tablets */

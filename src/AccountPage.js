@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from './AuthContext';
 import './AccountPage.css';
 
+
 const AccountPage = () => {
   const { user } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
@@ -177,7 +178,7 @@ const AccountPage = () => {
       </button>
     </div>
   </div>
-  
+  <Footer />
 </div>
   );
 };

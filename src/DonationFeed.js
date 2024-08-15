@@ -32,7 +32,6 @@ const DonationFeed = () => {
       } catch (error) {
         setError(error.message);
       } 
-      
     };
 
     fetchDonations();
@@ -48,15 +47,31 @@ const DonationFeed = () => {
 
   const handleRequestDonation = (donation) => {
     navigate('/RequestConfirmation', { state: { donation } });
-    
   };
-
 
   const filteredDonations = donations.filter(donation => {
     const matchesSearch = donation.description.toLowerCase().includes(search.toLowerCase());
     const matchesType = filters.type === 'all' || donation.foodtype === filters.type;
     return matchesSearch && matchesType;
   });
+
+  const renderDescription = (description) => {
+    // Check for the unique marker for rotten donations
+    const isRotten = description.includes("🚫 This donation has been detected as rotten. Instead of discarding it, please consider using it for composting or other useful purposes to help reduce waste.");
+    if (isRotten) {
+      return (
+        <p className="donation-description rotten-description">Description: {description}</p>
+      );
+    }
+    // Check for the unique marker for fresh donations
+    const isFresh = description.includes("✅ This donation has been detected as fresh");
+    if (isFresh) {
+      return (
+        <p className="donation-description fresh-description">Description: {description}</p>
+      );
+    }
+    return <p>Description: {description}</p>;
+  };
 
   return (
     <div className="main-container">
@@ -79,7 +94,7 @@ const DonationFeed = () => {
             <option value="fruits/vegetables">Fruits/Vegetables</option>
           </select>
         </div>
-        { error ? (
+        {error ? (
           <div className="error-message">{error}</div>
         ) : filteredDonations.length === 0 ? (
           <div className="no-donations-message">No donations available at the moment.</div>
@@ -91,11 +106,10 @@ const DonationFeed = () => {
                 alt={donation.description || 'Donation image'} 
                 className="donation-image" 
                 loading="lazy" 
-                
               />
               <div className="donation-info">
                 <h3>Donor: {donation.donorName}</h3>
-                <p>Description: {donation.description}</p>
+                {renderDescription(donation.description)}
                 <p>Expiration Date: {donation.expirationDate}</p>
                 <p>Food Type: {donation.foodtype}</p>
                 <p>Quantity: {donation.quantity} kg</p>
@@ -112,7 +126,6 @@ const DonationFeed = () => {
         )}
       </div>
       <Footer />
-     
     </div>
   );
 };

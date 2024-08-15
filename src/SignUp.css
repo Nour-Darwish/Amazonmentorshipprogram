@@ -1,56 +1,50 @@
-/* Sign-Up Page Styles */
 .sign-up-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
   background-image: url("background.jpg");
   background-size: cover;
   background-position: center;
   margin-top: -30px;
 }
-
 .sign-up {
-  width: 50%; /* Reduced width for a smaller white box */
-  max-width: 500px; /* Maximum width */
-  background: rgba(255, 255, 255, 0.95); 
+  width: 60%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   text-align: center;
-  padding: 20px; /* Added padding for internal spacing */
+  transform: scale(0.85);
 }
-
-.sign-up h2 {
+.sign-up h2{
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   margin-bottom: 25px;
   font-size: 2.5rem;
   color: #039855;
 }
-
 .sign-up .Create {
   color: black;
 }
-
 .sign-up .Account {
   color: #039855;
 }
-
 .sign-up form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
-
 .input-group {
   width: 100%;
   margin-bottom: 15px;
-  max-width: 400px; /* Adjusted for a more compact layout */
+  max-width: 500px;
+ 
   text-align: left;
 }
-
 .input-group label {
   display: block;
   font-family: 'Inter', sans-serif;
@@ -59,7 +53,6 @@
   margin-bottom: 10px;
   color: #333;
 }
-
 .input-group input, .phone-input select, .phone-input input {
   padding: 14px;
   border: 1px solid #ddd;
@@ -69,34 +62,29 @@
   width: 100%;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
-
 .input-group input:focus, .phone-input select:focus, .phone-input input:focus {
   border-color: #039855;
   box-shadow: 0 0 8px rgba(3, 152, 85, 0.3);
   outline: none;
 }
-
 .phone-input {
   display: flex;
 }
-
 .phone-input select {
   flex: 1;
   margin-right: 5px;
   border-radius: 8px;
 }
-
 .phone-input input {
   flex: 3;
 }
-
 .sign-up button {
   padding: 15px 30px;
   background-color: #039855;
   color: white;
   border: none;
   width: 60%;
-  max-width: 180px; /* Adjusted max width for smaller screens */
+  max-width: 200px;
   border-radius: 25px;
   cursor: pointer;
   margin-top: 20px;
@@ -105,29 +93,24 @@
   font-weight: 600;
   transition: background-color 0.3s, transform 0.3s;
 }
-
-.sign-up button:hover {
+.sign-up button:hover{
   background-color: #028a4e;
   transform: translateY(-2px);
 }
-
-.sign-up p {
+.sign-up p{
   text-align: center;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   margin-top: 20px;
 }
-
 .sign-up p a {
   color: #039855;
   text-decoration: none;
 }
-
-.sign-up p a:hover {
+.sign-up p a:hover{
   text-decoration: underline;
 }
-
 .notification {
   margin-bottom: 20px;
   padding: 10px;
@@ -137,7 +120,7 @@
   border-radius: 8px;
   font-family: 'Inter', sans-serif;
   width: 100%;
-  max-width: 400px; /* Adjusted for compact layout */
+  max-width: 500px;
   text-align: center;
 }
 
