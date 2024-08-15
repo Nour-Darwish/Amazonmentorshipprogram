@@ -91,3 +91,48 @@
 .confirm-button:hover {
   background-color: #028a4b;
 }
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .confirmation-container {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .confirmation-content {
+    margin-top: 15px;
+  }
+
+  .donation-details, .donor-info {
+    padding: 12px;
+  }
+
+  .confirmation-buttons {
+    flex-direction: column;
+    gap: 10px; /* Space between buttons when stacked */
+  }
+
+  .back-button, .confirm-button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .confirmation-container {
+    padding: 15px;
+  }
+
+  .donation-details, .donor-info {
+    padding: 10px;
+  }
+
+  .donor-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .back-button, .confirm-button {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}

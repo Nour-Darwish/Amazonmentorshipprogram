@@ -1,3 +1,4 @@
+/* Main container styling */
 .donation-form-page {
     display: flex;
     flex-direction: column;
@@ -5,13 +6,12 @@
     background-size: cover;
     background-position: center;
     font-family: "Inter", sans-serif;
-   
-    
 }
 
+/* Content box styling */
 .donation-form-container {
     width: 100%;
-    max-width: 950px;
+    max-width: 850px;
     margin: 50px auto;
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
@@ -19,9 +19,13 @@
     padding: 30px;
     overflow: hidden;
     transform: scale(0.8);
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Form title styling */
 .form-title {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -29,9 +33,9 @@
     font-size: 50px;
     color: #039855;
     text-align: center;
-    
 }
 
+/* Title color variations */
 .title-black {
     color: #333;
 }
@@ -40,21 +44,20 @@
     color: #039855;
 }
 
+/* Form styling */
 .donation-form {
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Increased gap between elements */
+    gap: 25px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Increased gap between label and input */
+    gap: 10px;
 }
 
 .form-group label {
-   
-     display: block;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -63,14 +66,12 @@
 }
 
 .form-input, .form-select {
-    padding: 14px; /* Increased padding for larger inputs */
-    font-size: 1rem; /* Larger font size for better readability */
+    padding: 14px;
+    font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     transition: border-color 0.3s;
-   
-  font-family: 'Inter', sans-serif;
-
+    font-family: 'Inter', sans-serif;
 }
 
 .form-input:focus, .form-select:focus {
@@ -79,23 +80,21 @@
     outline: none;
 }
 
+/* Hidden input styling */
 .hidden {
     display: none;
 }
 
-.form-inputt {
-    margin-top: 10px; /* Increased margin for better spacing */
-}
-
+/* Image preview styling */
 .image-preview {
     display: flex;
     align-items: center;
-    gap: 15px; /* Increased gap between image and button */
-    margin-top: 15px; /* Increased margin for more separation */
+    gap: 15px;
+    margin-top: 15px;
 }
 
 .image-preview img {
-    max-width: 120px; /* Larger preview size */
+    max-width: 120px;
     max-height: 120px;
     border-radius: 5px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
@@ -105,97 +104,149 @@
     background-color: #c62828;
     color: #ffffff;
     border: none;
-    padding: 10px 15px; /* Increased padding for larger button */
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem; /* Larger font size for better readability */
+    font-size: 1rem;
 }
 
+/* Checkbox styling */
 .checkbox-group {
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     margin-top: 5px;
-    /* Increased space between checkbox and label */
 }
 
 .checkbox-input {
-    width: 24px; /* Larger checkbox size */
+    width: 24px;
     height: 24px;
-    accent-color: #039855; /* Custom color for the checkbox */
+    accent-color: #039855;
 }
 
 .checkbox-label {
-    font-size: 1rem; /* Larger font size for better readability */
+    font-size: 1rem;
     color: #333;
-    
-    
 }
 
+/* Submit button styling */
 .submit-button {
     padding: 15px 30px;
     background-color: #039855;
     color: white;
     border: none;
-    width: 60%; /* Increased button width */
+    width: 60%;
     max-width: 200px;
     border-radius: 25px;
     cursor: pointer;
-    margin: 20px auto 0; /* Increased top margin */
+    margin: 20px auto 0;
     display: block;
     font-family: "Inter", sans-serif;
-    font-size: 1rem; /* Larger font size for better readability */
+    font-size: 1rem;
     font-weight: 600;
     transition: background-color 0.3s, transform 0.3s;
- 
 }
 
+/* Error message styling */
 .error-message {
     color: #f44336;
-    font-size: 1.1rem; /* Larger font size for better readability */
-    margin-bottom: 25px; /* Increased bottom margin for more space */
+    font-size: 1.1rem;
+    margin-bottom: 25px;
     text-align: center;
 }
+
+/* Tablet and small screen adjustments */
 @media (max-width: 768px) {
     .donation-form-container {
-        margin: 30px auto; /* Reduce margin for tablets */
-        padding: 20px; /* Reduce padding for smaller screens */
-        transform: scale(1); /* Remove scale transformation */
+        margin: 50px auto;
+        padding: 20px;
+        transform: scale(1);
+        width: 90%;
+        display: block;
     }
 
     .form-title {
-        font-size: 40px; /* Smaller font size for titles */
+        font-size: 36px;
     }
 
     .form-group label {
-        font-size: 0.9rem; /* Smaller font size for labels */
+        font-size: 0.9rem;
     }
 
     .form-input, .form-select {
-        font-size: 0.9rem; /* Smaller font size for inputs */
+        font-size: 0.9rem;
     }
 
     .image-preview img {
-        max-width: 100px; /* Smaller preview size */
+        max-width: 100px;
         max-height: 100px;
     }
 
     .delete-image-button {
-        padding: 8px 12px; /* Smaller padding for button */
-        font-size: 0.9rem; /* Smaller font size for button */
+        padding: 8px 12px;
+        font-size: 0.9rem;
     }
 
     .checkbox-input {
-        width: 20px; /* Smaller checkbox size */
+        width: 20px;
         height: 20px;
     }
 
     .checkbox-label {
-        font-size: 0.9rem; /* Smaller font size for checkbox labels */
+        font-size: 0.9rem;
     }
 
     .submit-button {
-        padding: 12px 25px; /* Smaller padding for button */
-        font-size: 0.9rem; /* Smaller font size for button */
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile device adjustments */
+@media (max-width: 480px) {
+    .donation-form-container {
+        margin: 80px auto 20px;
+        padding: 15px;
+        width: 80%;
+        max-width: 320px;
+        display: block;
+    }
+
+    .form-title {
+        font-size: 28px;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+    }
+
+    .form-input, .form-select {
+        font-size: 0.85rem;
+        padding: 12px;
+    }
+
+    .image-preview img {
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    .delete-image-button {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    .checkbox-input {
+        width: 18px;
+        height: 18px;
+    }
+
+    .checkbox-label {
+        font-size: 0.85rem;
+    }
+
+    .submit-button {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        max-width: 160px;
     }
 }

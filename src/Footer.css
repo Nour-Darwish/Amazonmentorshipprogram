@@ -29,4 +29,60 @@
   .footer .contact-info a:hover {
     text-decoration: underline; 
   }
-  
+  /* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px;
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+  }
+
+  .footer .contact-info {
+    flex-direction: row; /* Ensure text is side by side */
+    flex-wrap: wrap; /* Allow wrapping if space is limited */
+    gap: 10px; /* Reduce the gap between items */
+    font-size: 16px; /* Adjust font size for smaller screens */
+    justify-content: center; /* Center the contact info */
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer {
+    padding: 20px 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer .contact-info {
+    flex-direction: row; /* Maintain row direction */
+    gap: 15px;
+    font-size: 18px;
+    justify-content: center;
+  }
+}
+
+/* Small laptops (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer {
+    padding: 25px 30px;
+  }
+
+  .footer .contact-info {
+    flex-direction: row; /* Maintain row direction */
+    gap: 20px;
+    font-size: 18px;
+  }
+}
+
+/* Larger screens (1025px and above) */
+@media (min-width: 1025px) {
+  .footer {
+    padding: 30px 40px;
+  }
+
+  .footer .contact-info {
+    gap: 25px;
+    font-size: 20px;
+  }
+}

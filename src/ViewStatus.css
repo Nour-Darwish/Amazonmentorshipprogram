@@ -176,4 +176,71 @@ body, html {
   max-width: 90%;
   width: 100%; /* Full width with a max width for responsiveness */
 }
-
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .status-container {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  .status-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .status-card .buttons {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .status-card h4 {
+    font-size: 1.5rem; /* Adjusted font size for better readability on medium devices */
+  }
+  
+  .status-card p {
+    font-size: 1.1rem; /* Slightly increased font size */
+  }
+  
+  .status-card button {
+    padding: 12px 18px; /* Increased padding for better touch targets */
+    font-size: 1rem;
+  }
+  }
+  
+  @media (max-width: 480px) {
+  .status-container {
+    width: 95%;
+    padding: 15px; /* Reduced padding for smaller screens */
+  }
+  
+  .status-heading {
+    font-size: 1.8rem; /* Slightly smaller heading */
+    margin-top: 10px; /* Add space on top for better visibility */
+  }
+  
+  .status-section {
+    width: 100%; /* Ensure section takes full width */
+  }
+  
+  .status-card {
+    width: 100%; /* Make sure cards fit within the container */
+    margin: 0 auto 20px; /* Center the cards and add space below */
+    padding: 15px; /* Add padding for better spacing */
+    box-sizing: border-box; /* Ensure padding doesn't overflow the container */
+  }
+  
+  .status-card h4 {
+    font-size: 1.3rem; /* Adjusted font size for better readability */
+  }
+  
+  .status-card p {
+    font-size: 1.05rem; /* Slightly increased font size */
+  }
+  
+  .status-card button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+  }
+  
