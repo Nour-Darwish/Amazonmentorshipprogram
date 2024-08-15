@@ -191,7 +191,7 @@
 @media (max-width: 480px) {
     .main-container {
         padding: 20px; /* Consistent padding for smaller screens */
-        background-size: 50%; /* Zoom out the background image more */
+        background-size: 100%; /* Zoom out the background image more */
         background-repeat: no-repeat; /* Prevent background repetition */
         background-position: center; /* Keep the background image centered */
         display: flex;
