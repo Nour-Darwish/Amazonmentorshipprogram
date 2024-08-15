@@ -264,3 +264,111 @@ footer p {
   margin: 0;
   font-size: 1rem;
 }
+/* Tablets and Small Screens (up to 768px) */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 80vh; /* Reduce height for smaller screens */
+    padding: 0 10px; /* Add padding to avoid content touching edges */
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem; /* Decrease font size for headings */
+  }
+
+  .hero-content p {
+    font-size: 1.2rem; /* Adjust paragraph font size */
+    max-width: 90%; /* Allow more space for text */
+  }
+
+  .hero-button {
+    padding: 12px 20px; /* Reduce button padding */
+    font-size: 0.9rem; /* Decrease button font size */
+  }
+
+  .mission-section h2, 
+  .how-it-works h2, 
+  .food-facts h2 {
+    font-size: 2rem; /* Decrease heading font size */
+  }
+
+  .mission-section p, 
+  .about-us-section p, 
+  .step-text-box p, 
+  .fact-text-box p {
+    font-size: 1rem; /* Adjust paragraph font size */
+    max-width: 100%; /* Ensure full width is utilized */
+  }
+
+  .steps, 
+  .facts-grid {
+    flex-direction: column; /* Stack steps and facts vertically */
+    align-items: center;
+  }
+
+  .step, 
+  .fact {
+    max-width: 90%; /* Adjust max width for smaller screens */
+  }
+
+  .carousel-container {
+    margin-top: 20px; /* Reduce margin for carousel */
+  }
+
+  .join-community-button {
+    padding: 12px 20px; /* Reduce padding */
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  footer p {
+    font-size: 0.9rem; /* Adjust font size */
+  }
+}
+
+/* Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+  .hero-section {
+    height: 70vh; /* Further reduce height */
+    padding: 0 5px; /* Further reduce padding */
+  }
+
+  .hero-content h1 {
+    font-size: 2rem; /* Further decrease heading font size */
+  }
+
+  .hero-content p {
+    font-size: 1rem; /* Further adjust paragraph font size */
+    max-width: 100%; /* Use full width */
+  }
+
+  .hero-button {
+    padding: 10px 15px; /* Reduce button padding */
+    font-size: 0.8rem; /* Further decrease font size */
+  }
+
+  .mission-section h2, 
+  .how-it-works h2, 
+  .food-facts h2 {
+    font-size: 1.8rem; /* Further decrease heading font size */
+  }
+
+  .mission-section p, 
+  .about-us-section p, 
+  .step-text-box p, 
+  .fact-text-box p {
+    font-size: 0.9rem; /* Further adjust paragraph font size */
+  }
+
+  .step img, 
+  .fact img {
+    height: 150px; /* Adjust image height */
+  }
+
+  .join-community-button {
+    padding: 10px 15px; /* Further reduce padding */
+    font-size: 0.9rem; /* Further adjust font size */
+  }
+
+  footer p {
+    font-size: 0.8rem; /* Further adjust font size */
+  }
+}

@@ -1,9 +1,9 @@
+/* Sign-Up Page Styles */
 .sign-up-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
   background-image: url("background.jpg");
   background-size: cover;
   background-position: center;
@@ -11,19 +11,17 @@
 }
 
 .sign-up {
-  width: 60%;
-  max-width: 800px;
-
-
-  background: rgba(255, 255, 255, 0.95);
+  width: 50%; /* Reduced width for a smaller white box */
+  max-width: 500px; /* Maximum width */
+  background: rgba(255, 255, 255, 0.95); 
   border-radius: 12px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   text-align: center;
-  transform: scale(0.85);
+  padding: 20px; /* Added padding for internal spacing */
 }
 
-.sign-up h2{
+.sign-up h2 {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   margin-bottom: 25px;
@@ -49,8 +47,7 @@
 .input-group {
   width: 100%;
   margin-bottom: 15px;
-  max-width: 500px;
- 
+  max-width: 400px; /* Adjusted for a more compact layout */
   text-align: left;
 }
 
@@ -61,7 +58,6 @@
   font-weight: 600;
   margin-bottom: 10px;
   color: #333;
-
 }
 
 .input-group input, .phone-input select, .phone-input input {
@@ -100,7 +96,7 @@
   color: white;
   border: none;
   width: 60%;
-  max-width: 200px;
+  max-width: 180px; /* Adjusted max width for smaller screens */
   border-radius: 25px;
   cursor: pointer;
   margin-top: 20px;
@@ -110,12 +106,12 @@
   transition: background-color 0.3s, transform 0.3s;
 }
 
-.sign-up button:hover{
+.sign-up button:hover {
   background-color: #028a4e;
   transform: translateY(-2px);
 }
 
-.sign-up p{
+.sign-up p {
   text-align: center;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
@@ -128,7 +124,7 @@
   text-decoration: none;
 }
 
-.sign-up p a:hover{
+.sign-up p a:hover {
   text-decoration: underline;
 }
 
@@ -141,7 +137,72 @@
   border-radius: 8px;
   font-family: 'Inter', sans-serif;
   width: 100%;
-  max-width: 500px;
+  max-width: 400px; /* Adjusted for compact layout */
   text-align: center;
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .sign-up {
+    width: 70%; /* Adjust width for tablets and smaller screens */
+    max-width: 400px; /* Adjust max width for better fit */
+    padding: 25px; /* Adjust padding for a more compact layout */
+  }
+
+  .sign-up h2 {
+    font-size: 2rem; /* Decrease heading size slightly */
+    margin-bottom: 20px; /* Reduce margin below heading */
+  }
+
+  .input-group input, 
+  .sign-up button {
+    width: 100%; /* Ensure inputs and buttons take full width */
+  }
+
+  .phone-input {
+    flex-direction: column; /* Stack select and input vertically */
+  }
+
+  .phone-input select {
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 10px; /* Add space between select and input */
+  }
+}
+
+@media (max-width: 480px) {
+  .sign-up {
+    width: 85%; /* Utilize more of the width on very small screens */
+    max-width: 300px; /* Adjust max width to fit better on smaller screens */
+    padding: 20px; /* Further reduce padding for compactness */
+  }
+
+  .sign-up h2 {
+    font-size: 1.5rem; /* Further reduce heading size */
+    margin-bottom: 15px; /* Adjust margin for better spacing */
+  }
+
+  .input-group input {
+    padding: 10px; /* Smaller padding for input fields */
+  }
+
+  .sign-up button {
+    width: 100%; /* Full-width button for easier tapping */
+    max-width: none; /* Remove max-width to allow full width */
+    padding: 12px; /* Adjust padding for comfort on smaller screens */
+  }
+  
+  .phone-input {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .phone-input select,
+  .phone-input input {
+    width: 100%; /* Ensure select and input take full width */
+    margin-bottom: 10px; /* Add spacing for smaller screens */
+  }
+
+  .notification {
+    max-width: 100%; /* Ensure notification takes full width */
+    margin-bottom: 15px; /* Reduce margin for better spacing */
+  }
+}

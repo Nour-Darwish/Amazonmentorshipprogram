@@ -158,44 +158,164 @@
 }
 @media (max-width: 768px) {
     .donation-form-container {
-        margin: 30px auto; /* Reduce margin for tablets */
-        padding: 20px; /* Reduce padding for smaller screens */
-        transform: scale(1); /* Remove scale transformation */
+        margin: 50px auto;
+        padding: 20px;
+        transform: scale(1);
+        width: 90%; /* Adjusted width for better fit */
     }
 
     .form-title {
-        font-size: 40px; /* Smaller font size for titles */
+        font-size: 36px;
     }
 
     .form-group label {
-        font-size: 0.9rem; /* Smaller font size for labels */
+        font-size: 0.9rem;
     }
 
     .form-input, .form-select {
-        font-size: 0.9rem; /* Smaller font size for inputs */
+        font-size: 0.9rem;
     }
 
     .image-preview img {
-        max-width: 100px; /* Smaller preview size */
+        max-width: 100px;
         max-height: 100px;
     }
 
     .delete-image-button {
-        padding: 8px 12px; /* Smaller padding for button */
-        font-size: 0.9rem; /* Smaller font size for button */
+        padding: 8px 12px;
+        font-size: 0.9rem;
     }
 
     .checkbox-input {
-        width: 20px; /* Smaller checkbox size */
+        width: 20px;
         height: 20px;
     }
 
     .checkbox-label {
-        font-size: 0.9rem; /* Smaller font size for checkbox labels */
+        font-size: 0.9rem;
     }
 
     .submit-button {
-        padding: 12px 25px; /* Smaller padding for button */
-        font-size: 0.9rem; /* Smaller font size for button */
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+
+    /* Header adjustments for tablets */
+    header {
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+
+    .header-logo {
+        width: 50px;
+        height: auto;
+    }
+
+    .header-title {
+        font-size: 1.2rem;
+        margin-left: 10px;
+    }
+
+    nav {
+        font-size: 0.9rem;
+        display: flex;
+    }
+
+    .nav-links {
+        display: flex;
+        margin: 0;
+    }
+
+    .nav-links a {
+        padding: 8px 10px;
+        margin: 0 5px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    header {
+        padding: 8px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+
+    .header-logo {
+        width: 40px;
+        height: auto;
+    }
+
+    .header-title {
+        font-size: 1rem;
+        margin-left: 8px;
+        flex-grow: 1;
+    }
+
+    nav {
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: flex;
+        margin: 0;
+    }
+
+    .nav-links a {
+        padding: 6px 8px;
+        margin: 0 3px;
+        white-space: nowrap;
+    }
+
+    /* Adjusted content container */
+    .donation-form-container {
+        margin: 80px auto 20px; /* Reduce top margin */
+        padding: 15px;
+        width: 95%; /* Reduced width for better fit */
+        max-width: 320px; /* Set a maximum width */
+    }
+
+    .form-title {
+        font-size: 28px;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+    }
+
+    .form-input, .form-select {
+        font-size: 0.85rem;
+        padding: 12px;
+    }
+
+    .image-preview img {
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    .delete-image-button {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    .checkbox-input {
+        width: 18px;
+        height: 18px;
+    }
+
+    .checkbox-label {
+        font-size: 0.85rem;
+    }
+
+    .submit-button {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        max-width: 160px;
     }
 }

@@ -155,3 +155,75 @@
     margin-bottom: 25px;
     text-align: center;
 }
+@media (max-width: 768px) {
+    .donation-feed-container {
+        margin: 40px auto; /* Adjust margin for tablets */
+        padding: 20px; /* Adjust padding for tablets */
+        transform: scale(0.9); /* Scale down slightly */
+    }
+
+    .donation-feed-container h1 {
+        font-size: 1.8rem; /* Adjust font size for titles */
+    }
+
+    .search-filter-bar {
+        flex-direction: column; /* Stack search and filter inputs vertically */
+        gap: 10px; /* Adjust gap */
+    }
+
+    .donation-card {
+        flex-direction: column;
+        align-items: stretch; /* Stretch to full width */
+        padding: 15px; /* Adjust padding for donation cards */
+    }
+
+    .donation-image {
+        width: 100%; /* Full width for images */
+        height: auto;
+    }
+
+    .donation-info {
+        padding-left: 0;
+        padding-top: 12px; /* Add padding top for separation */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        padding: 20px; /* Consistent padding for smaller screens */
+        background-size: 50%; /* Zoom out the background image more */
+        background-repeat: no-repeat; /* Prevent background repetition */
+        background-position: center; /* Keep the background image centered */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+    }
+
+    .donation-feed-container {
+        width: 90%; /* Make the content box smaller to fit and center */
+        max-width: 400px; /* Set a maximum width for the content box */
+        padding: 10px; /* Reduce padding for better fit */
+        margin: 0; /* Remove extra margin */
+        transform: scale(0.95); /* Slightly zoom out the content box */
+        box-shadow: none; /* Optional: remove or adjust shadow to fit screen */
+    }
+
+    .donation-feed-container h1 {
+        font-size: 1.5rem; /* Adjust font size for titles */
+        margin-top: 0; /* Remove extra margin */
+    }
+
+    .search-input, .filter-select {
+        font-size: 0.85rem; /* Adjust font size for inputs */
+    }
+
+    .donation-card {
+        padding: 10px; /* Adjust padding for mobile */
+    }
+
+    .request-button {
+        padding: 8px 15px; /* Adjust padding for button */
+        font-size: 0.85rem; /* Adjust font size for button */
+    }
+}
