@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center; 
     
-    min-height: 100vh;
+    min-height: 300vh;
 }
 
 .donation-feed-container {
@@ -22,6 +22,7 @@
     max-width: 950px;
     margin: 160px auto;
     overflow: hidden;
+    margin-top: 150px;
 }
 
 .donation-feed-container h1 {

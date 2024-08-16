@@ -1,126 +1,131 @@
 /* General styling for the main container */
 .main-container {
-    font-family: "Inter", sans-serif;
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 80px; 
-  }
+  font-family: "Inter", sans-serif;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Added padding for breathing space */
+
+}
+
+/* Styling for the success container */
+.success-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 60px;
+  border-radius: 11px; /* Increased border-radius for a softer look */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+  display: flex;
+  align-items: center;
+  max-width: 700px; /* Increased width for more space */
+  width: 100%;
+  height: 400px;
+  margin-top: 120px;
   
-  /* Styling for the success container */
-  .success-container {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 90px;
-    width: 100%;
-    max-width: 920px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Styling for the success message */
-  .success-message {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 20px;
-  }
-  
-  /* Styling for the success image */
-  .success-image {
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-  }
-  
-  /* Styling for the home button */
-  .home-button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    background-color: #039855;
-    color: white;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-  }
-  
-  .home-button:hover {
-    background-color: #028a4b;
-  }
-  /* Small devices (phones, 600px and below) */
+}
+
+/* Styling for the success message */
+.success-message {
+  text-align: left;
+  margin-left: 30px; /* Increased margin for better spacing */
+  flex: 1; /* Allows the message to take up available space */
+}
+
+.success-message h1 {
+  font-size: 2.5em;
+  color: #039855;
+  margin-bottom: 15px; /* Increased spacing under the heading */
+}
+
+.success-message p {
+  font-size: 1.25em;
+  color: #333; /* Darkened the text color for better contrast */
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Styling for the success image */
+.success-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px; /* Softer edges for the image */
+  transition: transform 0.3s ease; /* Added a smooth hover effect */
+}
+
+.success-image:hover {
+  transform: scale(1.05); /* Slight zoom on hover for interactivity */
+}
+
+/* Responsive adjustments */
+
+/* Small devices (phones, 600px and below) */
 @media (max-width: 600px) {
   .success-container {
-    padding: 20px;
-    margin-top: 60px;
     flex-direction: column;
-  }
-
-  .success-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+    padding: 30px;
   }
 
   .success-message {
-    margin-left: 0;
     text-align: center;
+    margin-left: 0;
+    margin-top: 20px;
   }
 
-  .home-button {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
+  .success-message h1 {
+    font-size: 2em;
+  }
+
+  .success-message p {
+    font-size: 1em;
+  }
+
+  .success-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
   }
 }
 
 /* Medium devices (tablets, 768px and below) */
 @media (max-width: 768px) {
   .success-container {
-    padding: 25px;
-    margin-top: 70px;
-    flex-direction: column;
+    padding: 35px;
+  }
+
+  .success-message h1 {
+    font-size: 2.2em;
+  }
+
+  .success-message p {
+    font-size: 1.1em;
   }
 
   .success-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
-
-  .success-message {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .home-button {
-    width: 100%;
-    padding: 10px;
-    font-size: 15px;
+    width: 180px;
+    height: 180px;
   }
 }
 
 /* Large devices (desktops, 992px and below) */
 @media (max-width: 992px) {
   .success-container {
-    max-width: 750px;
+    max-width: 800px;
+  }
+
+  .success-message h1 {
+    font-size: 2.4em;
+  }
+
+  .success-message p {
+    font-size: 1.15em;
   }
 
   .success-image {
-    width: 300px;
-    height: 300px;
-  }
-
-  .home-button {
-    padding: 11px 22px;
-    font-size: 15px;
+    width: 200px;
+    height: 200px;
   }
 }

@@ -62,6 +62,20 @@ const HomePage = () => {
         </div>
         <button className="join-community-button" onClick={handleJoinCommunityClick}>Join the Community</button>
       </div>
+      
+      {/* Special Feature Section */}
+      <div className="special-feature-section">
+        <h2>Special Feature</h2>
+        <h1 className="bold-text">
+        <img src="/images/robot.png" alt="AI Robot" style={{ width: '70px', height: '70px', verticalAlign: 'middle' }} />
+          AI-Powered Freshness Detection
+          
+        </h1>
+        <p>We are excited to introduce our AI-powered model that helps detect the freshness of specific types of donated fruits and vegetables. This advanced technology uses machine learning to analyze images and predict whether the food is fresh or rotten, boasting an impressive 92% accuracy.</p>
+        <p>However, it's important to note that the model may not always provide a 100% correct prediction and is currently focused on specific types of fruits and vegetables. We are continuously working to refine and improve its performance, expanding its capabilities to cover more produce types. Your understanding and support in this ongoing journey are greatly appreciated.</p>
+      
+      </div>
+
       <div className="food-facts">
         <h2>Food waste facts in Lebanon</h2>
         <div className="facts-grid">

@@ -250,6 +250,46 @@ body {
   color: #333;
   text-align: left; /* Align text to the left */
 }
+/* Add the following to your existing CSS
+
+/* Special Feature Section */
+.special-feature-section {
+  padding: 50px 20px;  /* Consistent padding */
+  background-color: #ffffff;  /* Matching background */
+  text-align: center;  /* Center align text */
+}
+
+
+.special-feature-section h2 {
+  font-size: 2.5rem;  /* Consistent font size */
+  color: #039855;  /* Matching color */
+   /* Spacing consistent with other sections */
+}
+
+.special-feature-section p {
+  font-size: 1.2rem;  /* Consistent font size */
+  color: #333;  /* Matching text color */
+  max-width: 800px;  /* Consistent width */
+  margin: 0 auto 20px auto;  /* Center alignment and margin */
+  line-height: 1.6;
+  text-align: justify;
+  text-align: left;
+}
+.bold-text {
+  font-weight:bold; /* Ensure text is bold */
+  font-size: 1.5rem;
+  margin-top: 1px;
+  margin-bottom: 30px;
+   /* Adjust font size as needed */
+/* Optional: match color with the section's theme */
+}
+.special-feature-image {
+  max-width: 200px; /* Adjust width as needed */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
 
 /* Footer */
 footer {

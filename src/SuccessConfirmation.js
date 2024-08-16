@@ -1,10 +1,16 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import { useNavigate } from 'react-router-dom';
 import './SuccessConfirmation.css';
-import success from "./success.jpg"; // Changed to SVG for better quality
+
+import success from "./success.jpg"; // Use SVG or high-resolution image for better quality
 
 const SuccessConfirmation = () => {
+  const navigate = useNavigate();
+  const handleViewStatus = () => {
+    navigate("/ViewStatus"); 
+  };
   return (
     <div className="main-container">
       <Header />
@@ -15,7 +21,7 @@ const SuccessConfirmation = () => {
           <p className="success-text">
             Your request to receive a donation has been successfully sent. You can now check its status below.
           </p>
-          <a href="/view-status" className="status-link">View Status</a>
+          <a onClick={handleViewStatus} className="status-link">View Status</a>
         </div>
       </div>
       <Footer />
@@ -24,4 +30,3 @@ const SuccessConfirmation = () => {
 };
 
 export default SuccessConfirmation;
-
