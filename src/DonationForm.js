@@ -21,7 +21,7 @@ const DonationForm = () => {
 
     const handleFoodtypeChange = (e) => {
         setFoodtype(e.target.value);
-        setIsFruitsVegChecked(e.target.value === 'fruits/vegetables');
+       
     };
 
     const updateQuantityLabel = () => {
@@ -115,7 +115,9 @@ const DonationForm = () => {
                             <option value="cooked">Cooked</option>
                             <option value="canned">Canned</option>
                             <option value="raw">Raw</option>
-                            <option value="fruits/vegetables">Fruits/Vegetables</option>
+                            <option value="specific-fruits/vegetables">Fruits/Vegetables (Apple, Banana, Tomato, Cucumber, Orange, Potato, Bemye)</option>
+                            <option value="other-fruits/vegetables">Fruits/Vegetables (Other)</option>
+                            
                         </select>
                     </div>
                     <div className="form-group">
@@ -140,12 +142,7 @@ const DonationForm = () => {
                             </div>
                         )}
                     </div>
-                    {isFruitsVegChecked && (
-                        <div className="form-group checkbox-group">
-                            <input type="checkbox" id="is-fruit-veg" name="is-fruit-veg" required className="checkbox-input"/>
-                            <label htmlFor="is-fruit-veg" className="checkbox-label">Is your fruit/vegetable one of the following: Apple, Banana, Tomato, Cucumber, Orange, Potato, Bemye?</label>
-                        </div>
-                    )}
+                  
                     <div className="form-group checkbox-group">
                         <input type="checkbox" id="assure" name="assure" required className="checkbox-input"/>
                         <label htmlFor="assure" className="checkbox-label">I assure that the food quality and hygiene were maintained</label>
