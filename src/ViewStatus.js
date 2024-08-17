@@ -107,76 +107,86 @@ const ViewStatus = () => {
       }
     };
     
-  return (
-    <div className="view-status-page">
-      <Header />
-      <div className="status-container">
-      <h2 className="status-heading">
-        <span className="black-text">View</span> <span className="green-text">Status</span>
-        </h2>
-
-        {loading && <p>Loading...</p>}
-        {error && <p className="error-message">Error: {error}</p>}
-
-        <div className="status-section">
-          <h3>Incoming Requests</h3>
-          {incomingRequests.length > 0 ? (
-            incomingRequests.map((request) => (
-              <div key={request['request-id']} className="status-card">
-                <div className="info">
-                  <h4>Recipient:{request.requestername} </h4>
-                  <p>Description: {request.donationDetails.description}</p>
-                  <p>Expiration Date: {request.donationDetails.expirationDate}</p>
-                  <p>Food Type: {request.donationDetails.foodtype}</p>
-                  <p>Quantity: {request.donationDetails.quantity}</p>
-                  
-                  </div>
-                <div className="buttons">
-                  <button
-                    className="accept-button"
-                    onClick={() => handleAccept(request['request-id'],request.donationID)}
-                  >
-                    Accept
-                  </button>
-                  <button
-                    className="reject-button"
-                    onClick={() => handleReject(request['request-id'])}
-                  >
-                    Reject
-                  </button>
-                </div>
-              </div>
-            ))
+    return (
+      <div className="view-status-page">
+        <Header /> {/* Ensure Header component is imported and correctly used */}
+        <div className="status-container">
+          <h2 className="status-heading">
+            <span className="black-text">View</span> <span className="green-text">Status</span>
+          </h2>
+    
+          {loading ? (
+  <div className="loading-spinner">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
           ) : (
-            <p>No incoming requests.</p>
+            <>
+              {error && <p className="error-message">Error: {error}</p>}
+    
+              <div className="status-section">
+                <h3>Incoming Requests</h3>
+                {incomingRequests.length > 0 ? (
+                  incomingRequests.map((request) => (
+                    <div key={request['request-id']} className="status-card">
+                      <div className="info">
+                        <h4>Recipient: {request.requestername}</h4>
+                        <p>Description: {request.donationDetails.description}</p>
+                        <p>Expiration Date: {request.donationDetails.expirationDate}</p>
+                        <p>Food Type: {request.donationDetails.foodtype}</p>
+                        <p>Quantity: {request.donationDetails.quantity}</p>
+                      </div>
+                      <div className="buttons">
+                        <button
+                          className="accept-button"
+                          onClick={() => handleAccept(request['request-id'], request.donationID)}
+                        >
+                          Accept
+                        </button>
+                        <button
+                          className="reject-button"
+                          onClick={() => handleReject(request['request-id'])}
+                        >
+                          Reject
+                        </button>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <p>No incoming requests.</p>
+                )}
+              </div>
+    
+              <div className="status-section">
+                <h3>Outgoing Requests</h3>
+                {outgoingRequests.length > 0 ? (
+                  outgoingRequests.map((request) => (
+                    <div key={request['request-id']} className="status-card">
+                      <div className="info">
+                        <h4>Donor: {request.donorname}</h4>
+                        <p>Description: {request.donationDetails.description}</p>
+                        <p>Expiration Date: {request.donationDetails.expirationDate}</p>
+                        <p>Food Type: {request.donationDetails.foodtype}</p>
+                        <p>Quantity: {request.donationDetails.quantity}</p>
+                      </div>
+                      <div className={`status ${request.status}`}>{request.status}</div>
+                    </div>
+                  ))
+                ) : (
+                  <p>No outgoing requests.</p>
+                )}
+              </div>
+            </>
           )}
         </div>
-
-        <div className="status-section">
-          <h3>Outgoing Requests</h3>
-          {outgoingRequests.length > 0 ? (
-            outgoingRequests.map((request) => (
-              <div key={request['request-id']} className="status-card">
-                <div className="info">
-                  <h4>Donor:{request.donorname}</h4>
-                  <p>Description: {request.donationDetails.description}</p>
-                  <p>Expiration Date: {request.donationDetails.expirationDate}</p>
-                  <p>Food Type: {request.donationDetails.foodtype}</p>
-                  <p>Quantity: {request.donationDetails.quantity}</p>
-                </div>
-                <div className ={ `status ${request.status}`}>
-                  {request.status}
-                </div>
-              </div>
-            ))
-          ) : (
-            <p>No outgoing requests.</p>
-          )}
-        </div>
+        <Footer /> {/* Ensure Footer component is imported and correctly used */}
       </div>
-      <Footer />
-    </div>
-  );
-};
-
-export default ViewStatus;
+    );
+  };
+    export default ViewStatus;

@@ -7,6 +7,7 @@ import './DonationFeed.css';
 const DonationFeed = () => {
   const [donations, setDonations] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [filters, setFilters] = useState({ type: 'all' });
 
@@ -32,6 +33,9 @@ const DonationFeed = () => {
       } catch (error) {
         setError(error.message);
       } 
+      finally {
+        setLoading(false); // Set loading to false once data is fetched
+      }
     };
 
     fetchDonations();
@@ -91,10 +95,23 @@ const DonationFeed = () => {
             <option value="cooked">Cooked</option>
             <option value="canned">Canned</option>
             <option value="raw">Raw</option>
-            <option value="fruits/vegetables">Fruits/Vegetables</option>
+            <option value="specific-fruits/vegetables">Fruits/Vegetables (Apple, Banana, Tomato, Cucumber, Orange, Potato, Bemye)</option>
+            <option value="other-fruits/vegetables">Fruits/Vegetables (Other)</option>
           </select>
         </div>
-        {error ? (
+        {loading ? (
+      <div className="loading-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      </div>
+        )
+        : error ? (
           <div className="error-message">{error}</div>
         ) : filteredDonations.length === 0 ? (
           <div className="no-donations-message">No donations available at the moment.</div>
