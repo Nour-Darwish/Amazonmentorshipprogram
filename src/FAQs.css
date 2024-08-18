@@ -46,9 +46,9 @@
 .faq-content {
     flex: 1;
     margin-top: 100px;
-    max-height: 350px; /* Ensure content doesn't exceed the container height */
-    overflow-y: auto; /* Add a scrollbar if the content overflows */
-    padding-right: 10px; /* Space for scrollbar */
+    max-height: 350px; 
+    overflow-y: auto; 
+    padding-right: 10px; 
 }
 
 /* Styling for the FAQ heading */
@@ -65,7 +65,7 @@
 }
 
 .highlight {
-    color: #039855; /* Green color for 'Asked Questions' */
+    color: #039855; 
 }
 /* Responsive styling for tablet view */
 @media (max-width: 768px) {

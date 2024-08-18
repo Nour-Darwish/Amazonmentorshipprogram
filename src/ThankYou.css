@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px; /* Added padding for breathing space */
+  padding: 20px; 
 
 }
 
@@ -16,11 +16,11 @@
 .success-container {
   background-color: rgba(255, 255, 255, 0.95);
   padding: 60px;
-  border-radius: 11px; /* Increased border-radius for a softer look */
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+  border-radius: 11px; 
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); 
   display: flex;
   align-items: center;
-  max-width: 700px; /* Increased width for more space */
+  max-width: 700px; 
   width: 100%;
   height: 400px;
   margin-top: 120px;
@@ -30,19 +30,19 @@
 /* Styling for the success message */
 .success-message {
   text-align: left;
-  margin-left: 30px; /* Increased margin for better spacing */
-  flex: 1; /* Allows the message to take up available space */
+  margin-left: 30px; 
+  flex: 1; 
 }
 
 .success-message h1 {
   font-size: 2.5em;
   color: #039855;
-  margin-bottom: 15px; /* Increased spacing under the heading */
+  margin-bottom: 15px; 
 }
 
 .success-message p {
   font-size: 1.25em;
-  color: #333; /* Darkened the text color for better contrast */
+  color: #333; 
   margin: 0;
   line-height: 1.6;
 }
@@ -52,12 +52,12 @@
   width: 250px;
   height: 250px;
   object-fit: cover;
-  border-radius: 15px; /* Softer edges for the image */
-  transition: transform 0.3s ease; /* Added a smooth hover effect */
+  border-radius: 15px; 
+  transition: transform 0.3s ease; 
 }
 
 .success-image:hover {
-  transform: scale(1.05); /* Slight zoom on hover for interactivity */
+  transform: scale(1.05); 
 }
 
 /* Responsive adjustments */

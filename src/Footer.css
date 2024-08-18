@@ -1,24 +1,24 @@
 .footer {
   padding: 30px 30px;
-  position: fixed; /* Change to fixed to always position at the bottom */
-  bottom: -100px; /* Start hidden off the screen */
+  position: fixed; 
+  bottom: -100px; 
   left: 0;
-  width: 100%; /* Ensure footer takes full width */
+  width: 100%;
   background-color: white;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Inter", sans-serif;
-  transition: bottom 0.3s ease-in-out; /* Transition for smooth appearance */
+  transition: bottom 0.3s ease-in-out; 
   
-    z-index: 10; /* Ensure the footer is on top */
+    z-index: 10; 
 
 
 }
 
 .footer.visible {
-  bottom: 0; /* Slide up into view */
+  bottom: 0; 
 }
 
 .footer .contact-info {

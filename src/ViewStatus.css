@@ -15,7 +15,7 @@ body, html {
   justify-content: center;
   align-items: center;
   
-  /* Increased padding for better spacing */
+  
 }
 
 .status-container {
@@ -44,11 +44,11 @@ body, html {
  
 }
 .black-text {
-  color: #000000; /* Black color */
+  color: #000000; 
 }
 
 .green-text {
-  color: #039855; /* Green color */
+  color: #039855; 
 }
 
 .status-section {
@@ -64,7 +64,7 @@ body, html {
   padding-bottom: 5px;
   
   font-size: 1.5rem;
- /* Added letter spacing */
+
 }
 
 .status-card {
@@ -78,7 +78,7 @@ body, html {
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 150px;
-  text-align: center; /* Center text alignment */
+  text-align: center; 
 }
 
 .status-card:hover {
@@ -96,7 +96,7 @@ body, html {
   margin: 0;
   color: #333333;
   font-weight: 700;
-  letter-spacing: 0.7px; /* Slight letter spacing */
+  letter-spacing: 0.7px; 
   text-align: left;
 }
 
@@ -105,16 +105,16 @@ body, html {
   color: #555555;
   line-height: 1.5;
   text-align: left;
-  font-size: 1.1rem; /* Slightly larger font size */
+  font-size: 1.1rem; 
 }
 
 .status-card .buttons {
   display: flex;
-  gap: 20px; /* More spacing between buttons */
+  gap: 20px; 
 }
 
 .status-card button {
-  padding: 12px 30px; /* Slightly larger padding */
+  padding: 12px 30px; 
   border: none;
   border-radius: 25px;
   cursor: pointer;
@@ -122,7 +122,7 @@ body, html {
   font-size: 1rem;
   font-weight: 600;
   transition: background-color 0.3s, transform 0.3s;
-  letter-spacing: 0.5px; /* Added letter spacing */
+  letter-spacing: 0.5px; 
 }
 
 .status-card .accept-button {

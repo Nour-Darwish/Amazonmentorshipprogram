@@ -4,8 +4,7 @@ import Footer from './Footer';
 import { useNavigate } from 'react-router-dom';
 import './SuccessConfirmation.css';
 
-import success from "./success.jpg"; // Use SVG or high-resolution image for better quality
-
+import success from "./success.jpg"; 
 const SuccessConfirmation = () => {
   const navigate = useNavigate();
   const handleViewStatus = () => {

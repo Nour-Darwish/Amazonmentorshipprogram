@@ -109,7 +109,7 @@ const ViewStatus = () => {
     
     return (
       <div className="view-status-page">
-        <Header /> {/* Ensure Header component is imported and correctly used */}
+        <Header />
         <div className="status-container">
           <h2 className="status-heading">
             <span className="black-text">View</span> <span className="green-text">Status</span>
@@ -185,7 +185,7 @@ const ViewStatus = () => {
             </>
           )}
         </div>
-        <Footer /> {/* Ensure Footer component is imported and correctly used */}
+        <Footer /> 
       </div>
     );
   };
